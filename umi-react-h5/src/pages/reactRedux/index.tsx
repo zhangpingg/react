@@ -5,7 +5,6 @@ const UseRedux = () => {
     // useSelector 替代 mapStateToProps，从store中提取state数据
     // useDispatch 替代 mapDispatchToProps，从store中获取dispatch方法的引用
     const { IMAGES_FILES, EXCEL_FILES } = useSelector((state: any) => {
-        console.log(11, state);
         return state?.publicRedux.user;
     });
     const dispatch = useDispatch();

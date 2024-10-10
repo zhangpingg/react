@@ -2,20 +2,20 @@ import { useCallback } from 'react';
 import { useSelector, useDispatch } from 'dva';
 
 const UseDva = () => {
-    const { userObj } = useSelector((state: any) => state.global);
+    const { userObj } = useSelector((state: any) => state.globalDva);
     const dispatch = useDispatch();
 
     /** 改变用户信息 */
     const changeUserInfo = useCallback(() => {
         dispatch({
-            type: 'global/changeUser',
+            type: 'globalDva/changeUser',
             payload: { name: '张三' },
         });
     }, []);
     /** 获取用户数据 */
     const getUserInfo = useCallback(() => {
         dispatch({
-            type: 'global/getUser',
+            type: 'globalDva/getUser',
             payload: { userId: 1 },
             callback: (data: any) => {
                 console.log('回调函数：', data); // 借用接口后，返回的数据
