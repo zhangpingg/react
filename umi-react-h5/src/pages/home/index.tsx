@@ -40,7 +40,7 @@ const Index = () => {
                 className="db mb-10"
                 onClick={() => jumpPage('dva')}
             >
-                dva
+                dva（持久化）
             </Button>
             <Button
                 size="mini"
