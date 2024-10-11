@@ -2,7 +2,9 @@ import { defineConfig } from 'umi';
 import routes from './config/routes';
 import proxy from './config/proxy';
 import path from 'path';
-const proem = require('postcss-px2rem');
+// 以下2个都可以
+const prtoem = require('postcss-px2rem');
+//const prtoem = require('postcss-pxtorem');
 
 export default defineConfig({
     nodeModulesTransform: {
@@ -21,21 +23,12 @@ export default defineConfig({
         // 别名配置
         '@': path.resolve('src'),
     },
-    //extraBabelPlugins: [
-    //  // 按需引入
-    //  [
-    //    'import',
-    //    {
-    //      libraryName: 'antd',
-    //      libraryDirectory: 'es', // default: lib
-    //      style: true,
-    //    },
-    //  ],
-    //],
     extraPostCSSPlugins: [
-        proem({
-            remUnit: 75, // 基准值，表示1rem=75px
-            propList: ['*'],
+        prtoem({
+            remUnit: 37.5, // 基准值，表示1rem=37.5px
+            rootValue: 37.5, // 指定转换倍率，我现在设置这个表示1rem=37.5px
+            propList: ['*'], // 属性列表，表示你要把哪些css属性的px转换成rem，这个*表示所有
+            selectorBalckList: ['.adm-'], // 匹配不被转换为rem的选择器，例如UI框架antd-mobile
         }),
     ],
 });
