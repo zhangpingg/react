@@ -1,4 +1,4 @@
-// import * as api from '@/api';
+// 【dva 持久化-1】
 const model = {
     namespace: 'globalDva',
     state: {
