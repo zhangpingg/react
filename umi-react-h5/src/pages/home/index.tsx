@@ -10,31 +10,46 @@ const Index = () => {
 
     return (
         <div className={styles.home}>
-            <Button color="primary" onClick={() => jumpPage('test')}>
+            <Button
+                size="mini"
+                color="primary"
+                className="db mb-10"
+                onClick={() => jumpPage('test')}
+            >
                 test
             </Button>
-            <br />
-            <br />
-            <Button color="primary" onClick={() => jumpPage('antdMobile')}>
+            <Button
+                size="mini"
+                color="primary"
+                className="db mb-10"
+                onClick={() => jumpPage('antdMobile')}
+            >
                 antd-mobile
             </Button>
-            <br />
-            <br />
-            <Button color="primary" onClick={() => jumpPage('reactRedux')}>
+            <Button
+                size="mini"
+                color="primary"
+                className="db mb-10"
+                onClick={() => jumpPage('reactRedux')}
+            >
                 react-redux
             </Button>
-            <br />
-            <br />
-            <Button color="primary" onClick={() => jumpPage('dva')}>
+            <Button
+                size="mini"
+                color="primary"
+                className="db mb-10"
+                onClick={() => jumpPage('dva')}
+            >
                 dva
             </Button>
-            <br />
-            <br />
-            <Button color="primary" onClick={() => jumpPage('apiData')}>
+            <Button
+                size="mini"
+                color="primary"
+                className="db mb-10"
+                onClick={() => jumpPage('apiData')}
+            >
                 apiData
             </Button>
-            <br />
-            <br />
         </div>
     );
 };
