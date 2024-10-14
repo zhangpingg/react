@@ -1,7 +1,7 @@
 declare module '*.css';
 declare module '*.less';
 declare module '*.png';
-declare module '@/api*';
+declare module '@/*';
 declare module '*.svg' {
     export function ReactComponent(
         props: React.SVGProps<SVGSVGElement>,

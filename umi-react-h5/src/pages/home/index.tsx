@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { history } from 'umi';
-import styles from './index.less';
+import cn from 'classnames';
+import styles from './index.module.less';
 import { Button } from 'antd-mobile';
 
 const Index = () => {
@@ -9,7 +10,7 @@ const Index = () => {
     };
 
     return (
-        <div className={styles.home}>
+        <div className={cn(styles.home, 'pt-10')}>
             <Button
                 size="mini"
                 color="primary"

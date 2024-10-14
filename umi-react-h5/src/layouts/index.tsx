@@ -1,7 +1,7 @@
 import 'lib-flexible';
 import { Provider } from 'react-redux';
 import store from '@/store';
-import styles from './index.less';
+import styles from './index.module.less';
 
 const Layouts = (props: any) => {
     return (

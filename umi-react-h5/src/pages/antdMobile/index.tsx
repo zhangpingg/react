@@ -1,4 +1,4 @@
-import styles from './index.less';
+import styles from './index.module.less';
 import { Button, Input } from 'antd-mobile';
 
 const Index = () => {
