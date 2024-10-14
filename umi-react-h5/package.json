@@ -25,6 +25,7 @@
     "antd-mobile": "^5.37.1",
     "axios": "^1.7.7",
     "classnames": "^2.5.1",
+    "js-cookie": "^3.0.5",
     "lib-flexible": "^0.3.2",
     "lodash": "^4.17.21",
     "pinia": "^2.2.4",
