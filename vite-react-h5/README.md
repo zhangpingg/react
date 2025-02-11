@@ -7,5 +7,8 @@ npm run build
 ```
 
 ```
-
+1) antd-mobile
+2) antd
+3) react-redux @reduxjs/toolkit
 ```
+
