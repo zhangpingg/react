@@ -10,5 +10,6 @@ npm run build
 1) antd-mobile
 2) antd
 3) react-redux @reduxjs/toolkit
+4) 接口请求
 ```
 

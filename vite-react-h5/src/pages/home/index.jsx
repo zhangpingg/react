@@ -31,6 +31,16 @@ const Index = () => {
             <Button size="mini" color="primary" onClick={() => jumpPage('antd')}>
                 antd
             </Button>
+            <br />
+            <br />
+            <Button size="mini" color="primary" onClick={() => jumpPage('reactRedux')}>
+                reactRedux
+            </Button>
+            <br />
+            <br />
+            <Button size="mini" color="primary" onClick={() => jumpPage('apiData')}>
+                apiData
+            </Button>
         </div>
     );
 };
