@@ -11,5 +11,7 @@ npm run build
 2) antd
 3) react-redux @reduxjs/toolkit
 4) 接口请求
+5) px -> rem 计算
+6) 微信公众号授权？
 ```
 

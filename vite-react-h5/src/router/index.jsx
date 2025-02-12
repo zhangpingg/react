@@ -7,6 +7,7 @@ const AntdMobile = lazy(() => import('../pages/antdMobile/index.jsx')); // antd-
 const Antd = lazy(() => import('../pages/antd/index.jsx')); // antd
 const ReactRedux = lazy(() => import('../pages/reactRedux/index.jsx')); // reactRedux
 const ApiData = lazy(() => import('../pages/apiData/index.jsx')); // apiData
+const PxToRem = lazy(() => import('../pages/pxToRem/index.jsx')); // px -> rem
 
 const Index = () => {
     return (
@@ -18,6 +19,7 @@ const Index = () => {
                 <Route path="/antd" element={<Antd />} />
                 <Route path="/reactRedux" element={<ReactRedux />} />
                 <Route path="/apiData" element={<ApiData />} />
+                <Route path="/pxToRem" element={<PxToRem />} />
             </Routes>
         </BrowserRouter>
     );

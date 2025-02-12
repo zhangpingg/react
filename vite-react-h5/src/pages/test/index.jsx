@@ -1,12 +1,17 @@
 import React, { useEffect } from 'react';
-import { Toast } from 'antd-mobile';
+import { Button } from 'antd-mobile';
+import styles from './index.module.less';
 
 const Index = () => {
-    useEffect(() => {
-        Toast.show('报错了');
-    }, []);
+    useEffect(() => {}, []);
 
-    return <div>test</div>;
+    return (
+        <div className={styles['t']}>
+            <Button size="mini" color="primary">
+                test
+            </Button>
+        </div>
+    );
 };
 
 export default Index;

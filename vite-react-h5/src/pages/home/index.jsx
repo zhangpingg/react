@@ -41,6 +41,11 @@ const Index = () => {
             <Button size="mini" color="primary" onClick={() => jumpPage('apiData')}>
                 apiData
             </Button>
+            <br />
+            <br />
+            <Button size="mini" color="primary" onClick={() => jumpPage('pxToRem')}>
+                px -> rem
+            </Button>
         </div>
     );
 };

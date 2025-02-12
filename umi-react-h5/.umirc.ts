@@ -29,6 +29,9 @@ export default defineConfig({
             rootValue: 37.5, // 指定转换倍率，我现在设置这个表示1rem=37.5px
             propList: ['*'], // 属性列表，表示你要把哪些css属性的px转换成rem，这个*表示所有
             selectorBalckList: ['.adm-'], // 匹配不被转换为rem的选择器，例如UI框架antd-mobile
+            replace: true, // 直接替换原值，而非追加
+            mediaQuery: false, // 是否转换媒体查询中的px
+            minPixelValue: 0, // 设置要替换的最小像素值
         }),
     ],
 });
