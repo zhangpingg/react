@@ -31,7 +31,6 @@ const codeMessage = {
 
 // 创建一个 axios 实例
 const service = axios.create({
-    // baseURL: getEnvironment() === 'product' ? '/api/quality' : '/test/api/quality',   // 质管
     timeout: 10000, // 请求超时时间
 });
 
@@ -66,9 +65,6 @@ service.interceptors.request.use(
             config.headers.Authorization = `Bearer ${getUrlQuery()?.token}`;
             return config;
         }
-        // 质管
-        // config.headers['Authorization'] = Cookies.get('token');
-        // return config;
     },
     (err) => {
         // 发送失败
@@ -79,6 +75,7 @@ service.interceptors.request.use(
 // 响应拦截器
 service.interceptors.response.use(
     (res) => {
+        console.log(11, res);
         const { data, status } = res;
         if (status !== 200) {
             Toast.show(codeMessage[status] || data.message || '当前访问人数过多，请稍后再试');
@@ -105,7 +102,7 @@ service.interceptors.response.use(
         return Promise.resolve(data);
     },
     (error) => {
-        console.warn(JSON.stringify(error));
+        console.warn(error);
         let errMsg = error.message;
         if (error && error.response) {
             errMsg = codeMessage[error.response.status];

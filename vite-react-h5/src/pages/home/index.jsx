@@ -22,29 +22,24 @@ const Index = () => {
                 test
             </Button>
             <br />
-            <br />
             <Button size="mini" color="primary" onClick={() => jumpPage('antdMobile')}>
                 antd-mobile
             </Button>
-            <br />
             <br />
             <Button size="mini" color="primary" onClick={() => jumpPage('antd')}>
                 antd
             </Button>
             <br />
-            <br />
             <Button size="mini" color="primary" onClick={() => jumpPage('reactRedux')}>
                 reactRedux
             </Button>
             <br />
-            <br />
-            <Button size="mini" color="primary" onClick={() => jumpPage('apiData')}>
-                apiData
+            <Button size="mini" color="primary" onClick={() => jumpPage('requestData')}>
+                接口请求
             </Button>
             <br />
-            <br />
             <Button size="mini" color="primary" onClick={() => jumpPage('pxToRem')}>
-                px -> rem
+                px =》 rem
             </Button>
         </div>
     );

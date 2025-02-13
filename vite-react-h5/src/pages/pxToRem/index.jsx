@@ -1,4 +1,5 @@
 import React from 'react';
+import cn from 'classnames';
 import { Button } from 'antd-mobile';
 import styles from './index.module.less';
 
@@ -12,10 +13,7 @@ const Index = () => {
                 </Button>
             </div>
 
-            <div className={styles['ptr-custom']}>
-                自定义编写 <br />
-                <p className="fs-32">内容</p>
-            </div>
+            <div className={cn(styles['ptr-custom'], 'fs-20')}>自定义编写</div>
         </div>
     );
 };

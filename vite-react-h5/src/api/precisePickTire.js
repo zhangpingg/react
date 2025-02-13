@@ -6,11 +6,11 @@
 
 import request from '@/libs/request';
 
-// 获取-左侧菜单
-export const apiTireMenu = (data) => {
+// 查询满足条件的商品数量
+export const apiTireCount = (data) => {
     return request({
-        url: '/api/haotian/select/tire/left/menu',
-        method: 'get',
-        params: data,
+        url: `/api/haotian/select/tire/count`,
+        method: 'post',
+        data,
     });
 };
