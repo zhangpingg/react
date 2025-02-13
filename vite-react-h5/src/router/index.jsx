@@ -1,6 +1,8 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
+const UpdateTitle = lazy(() => import('../components/updateTitle/index.jsx')); // 更新标题
+
 const Loading = lazy(() => import('../pages/loading/index.jsx')); // loading
 const Home = lazy(() => import('../pages/home/index.jsx')); // home
 const Test = lazy(() => import('../pages/test/index.jsx')); // test
@@ -15,8 +17,10 @@ const Index = () => {
     return (
         <BrowserRouter>
             <Suspense fallback={<Loading />}>
+                <UpdateTitle />
                 <Routes>
                     <Route path="/" element={<Home />} />
+                    <Route path="/home" element={<Home />} />
                     <Route path="/test" element={<Test />} />
                     <Route path="/antdMobile" element={<AntdMobile />} />
                     <Route path="/antd" element={<Antd />} />
