@@ -5,12 +5,13 @@
  */
 
 import React, { useEffect } from 'react';
-import { Input } from 'antd';
+import { Input, Button } from 'antd';
 
 const Index = () => {
     return (
         <div>
             <Input placeholder="请输入" />
+            <Button>按钮</Button>
         </div>
     );
 };

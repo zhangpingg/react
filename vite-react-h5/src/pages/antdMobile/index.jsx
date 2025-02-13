@@ -14,6 +14,7 @@ const Index = () => {
             <Button block color="primary" size="mini">
                 按钮
             </Button>
+            <Input placeholder="请输入内容" />
         </div>
     );
 };

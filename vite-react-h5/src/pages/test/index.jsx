@@ -8,7 +8,7 @@ const Index = () => {
     return (
         <div className={styles['t']}>
             <Button size="mini" color="primary">
-                test
+                按钮
             </Button>
         </div>
     );
