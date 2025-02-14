@@ -72,7 +72,6 @@ service.interceptors.request.use(
 // 响应拦截器
 service.interceptors.response.use(
     (res) => {
-        console.log(11, res);
         const { data, status } = res;
         if (status !== 200) {
             Toast.show(codeMessage[status] || data.message || '当前访问人数过多，请稍后再试');

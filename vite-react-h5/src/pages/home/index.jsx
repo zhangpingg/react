@@ -45,6 +45,10 @@ const Index = () => {
             <Button size="mini" color="primary" onClick={() => jumpPage('modalScrollInIOSH5')}>
                 IOS：弹框中滚动内容，影响了父页面滚动【H5移动端】
             </Button>
+            <br />
+            <Button size="mini" color="primary" onClick={() => jumpPage('routeJumpParam-index')}>
+                路由跳转传参
+            </Button>
         </div>
     );
 };

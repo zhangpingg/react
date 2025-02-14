@@ -1,22 +1,23 @@
-import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
+// 数据存储
 import { Provider } from 'react-redux';
 import store from '@/store';
-import 'amfe-flexible';
-import Vconsole from 'vconsole';
-import AppRouter from './router/index.jsx';
-import 'antd/dist/reset.css';
+import 'amfe-flexible'; // px->rem：动态修改body的font-size大小
+import Vconsole from 'vconsole'; // 调试面板
+import AppRouter from './router/index.jsx'; // 路由
+import 'antd/dist/reset.css'; // antd5样式
 import './base.less';
 import { getEnvironment } from '@/libs/util.win.js';
+import { setWxConfig } from '@/libs/wx.js';
 
 if (getEnvironment() !== 'prod') {
     new Vconsole();
 }
 
+setWxConfig();
+
 createRoot(document.getElementById('root')).render(
     <Provider store={store}>
-        <StrictMode>
-            <AppRouter />
-        </StrictMode>
+        <AppRouter />
     </Provider>
 );

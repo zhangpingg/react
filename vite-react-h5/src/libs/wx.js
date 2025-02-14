@@ -1,6 +1,5 @@
-import { Toast } from 'antd-mobile';
 import axios from 'axios';
-const wx = require('weixin-js-sdk');
+import wx from 'weixin-js-sdk';
 
 const APP_ID = 'wx2cb4f747b9571e96';
 
@@ -21,12 +20,6 @@ const wxAuthLoginByBase = (pageUrl, params) => {
 
 // 获取微信的配置参数
 const getConfig = () => {
-    Toast.show({
-        icon: 'loading',
-        content: '加载中…',
-        duration: 0,
-        maskClickable: false,
-    });
     let url = window.location.href.split('#')[0];
     return new Promise((resolve, reject) => {
         axios({
@@ -42,11 +35,9 @@ const getConfig = () => {
                     console.log(res);
                     reject(res);
                 }
-                Toast.clear();
             },
             (err) => {
                 reject(err);
-                Toast.clear();
             }
         );
     });
