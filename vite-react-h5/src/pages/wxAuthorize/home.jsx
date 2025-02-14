@@ -6,7 +6,6 @@
 
 import React, { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
-import LoginModal from './components/loginModal';
 import { wx } from '@/libs/wx.js';
 import { wxAuthLoginByBase } from '@/libs/wx.js';
 import { getUrlQuery } from '@/libs/util';

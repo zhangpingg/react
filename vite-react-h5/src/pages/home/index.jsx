@@ -49,6 +49,10 @@ const Index = () => {
             <Button size="mini" color="primary" onClick={() => jumpPage('routeJumpParam-index')}>
                 路由跳转传参
             </Button>
+            <br />
+            <Button size="mini" color="primary" onClick={() => jumpPage('wxAuthorize-authorize')}>
+                微信授权（只有代码，本地不能测试）
+            </Button>
         </div>
     );
 };

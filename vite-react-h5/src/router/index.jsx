@@ -17,6 +17,8 @@ const PxToRem = lazy(() => import('../pages/pxToRem/index.jsx')); // px -> rem
 const ModalScrollInIOSH5 = lazy(() => import('../pages/modalScrollInIOSH5/index.jsx')); // IOS：弹框中滚动内容，影响了父页面滚动【H5移动端】
 const RouteJumpParamIndex = lazy(() => import('../pages/routeJumpParam/index.jsx')); // 路由跳转传参-首页
 const RouteJumpParamDetails = lazy(() => import('../pages/routeJumpParam/details.jsx')); // 路由跳转传参-详情页
+const WxAuthorizeAuthorize = lazy(() => import('../pages/wxAuthorize/authorize.jsx')); // 微信授权登录-授权页 (微信公众号)
+const WxAuthorizeHome = lazy(() => import('../pages/wxAuthorize/home.jsx')); // 微信授权登录-授权成功后首页 (微信公众号)
 
 const Index = () => {
     return (
@@ -35,6 +37,8 @@ const Index = () => {
                     <Route path="/modalScrollInIOSH5" element={<ModalScrollInIOSH5 />} />
                     <Route path="/routeJumpParam-index" element={<RouteJumpParamIndex />} />
                     <Route path="/routeJumpParam-details" element={<RouteJumpParamDetails />} />
+                    <Route path="/wxAuthorize-authorize" element={<WxAuthorizeAuthorize />} />
+                    <Route path="/wxAuthorize-home" element={<WxAuthorizeHome />} />
                     <Route path="*" element={<Err404 />} />
                 </Routes>
             </Suspense>

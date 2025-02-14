@@ -21,8 +21,7 @@ const Index = () => {
         const { authorizationToken, bindMobileBizCode, haveBindMobile } = data;
         localStorage.setItem('wx-auth-token', authorizationToken);
         const searchParams = new URLSearchParams(rest);
-        navigate(pathname, {
-            //search: searchParams.toString(),
+        navigate(`${pathname}?${searchParams.toString()}`, {
             state: {
                 bindMobileBizCode,
                 haveBindMobile,
@@ -32,7 +31,7 @@ const Index = () => {
     };
 
     useEffect(() => {
-        wxAuthLogin(urlParams.code);
+        //wxAuthLogin(urlParams.code);
     }, []);
 
     return <div className="fs-14 tac pt-100">登录中...</div>;
