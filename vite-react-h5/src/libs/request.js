@@ -1,8 +1,5 @@
 import axios from 'axios';
 import { Toast } from 'antd-mobile';
-import Cookies from 'js-cookie';
-import { throwLogError, throwNoticeError } from './util.error';
-import { getEnvironment } from './util.win'; // 质管
 import { getUrlQuery } from './util.tool';
 import jsBridge from './JSBridge';
 

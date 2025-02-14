@@ -12,6 +12,7 @@ const Antd = lazy(() => import('../pages/antd/index.jsx')); // antd
 const ReactRedux = lazy(() => import('../pages/reactRedux/index.jsx')); // reactRedux
 const RequestData = lazy(() => import('../pages/requestData/index.jsx')); // 接口请求
 const PxToRem = lazy(() => import('../pages/pxToRem/index.jsx')); // px -> rem
+const ModalScrollInIOSH5 = lazy(() => import('../pages/modalScrollInIOSH5/index.jsx')); // IOS：弹框中滚动内容，影响了父页面滚动【H5移动端】
 
 const Index = () => {
     return (
@@ -27,6 +28,7 @@ const Index = () => {
                     <Route path="/reactRedux" element={<ReactRedux />} />
                     <Route path="/requestData" element={<RequestData />} />
                     <Route path="/pxToRem" element={<PxToRem />} />
+                    <Route path="/modalScrollInIOSH5" element={<ModalScrollInIOSH5 />} />
                     <Route path="*" element={<Err404 />} />
                 </Routes>
             </Suspense>
