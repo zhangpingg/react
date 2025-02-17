@@ -6,7 +6,6 @@
 
 import React, { useEffect } from 'react';
 import { Button } from 'antd-mobile';
-//import { useNavigate, useSearchParams, useLocation } from 'react-router-dom';
 import { useNavigate, useSearchParams, useLocation } from 'react-router';
 import { getUrlQuery } from '@/libs/util.tool';
 
