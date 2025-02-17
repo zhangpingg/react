@@ -14,3 +14,12 @@ export const apiTireCount = (data) => {
         data,
     });
 };
+
+// 门店app-月榜
+export const apiStoreappMonthRank = (data) => {
+    return request({
+        url: `/api/puti/classroom/rank/monthRank`,
+        method: 'get',
+        params: data,
+    });
+};

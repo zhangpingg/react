@@ -48,7 +48,11 @@ service.interceptors.request.use(
             return new Promise((resolve) => {
                 jsBridge.request('sign', jsbData).then((res) => {
                     if (res.data) {
-                        config.headers = Object.assign({}, config.headers, res.data);
+                        config.headers = Object.assign(
+                            {},
+                            { Authorization: `Bearer ${getUrlQuery()?.token}` },
+                            res.data
+                        );
                         resolve(config);
                     }
                 });
