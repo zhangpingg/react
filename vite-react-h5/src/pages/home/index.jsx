@@ -57,6 +57,10 @@ const Index = () => {
             <Button size="mini" color="primary" onClick={() => jumpPage('previewImg')}>
                 预览图片
             </Button>
+            <br />
+            <Button size="mini" color="primary" onClick={() => jumpPage('domToImage')}>
+                DOM转换为图片
+            </Button>
         </div>
     );
 };

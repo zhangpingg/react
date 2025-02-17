@@ -50,7 +50,7 @@ service.interceptors.request.use(
                     if (res.data) {
                         config.headers = Object.assign(
                             {},
-                            { Authorization: `Bearer ${getUrlQuery()?.token}` },
+                            { Authorization: `Bearer ${getUrlQuery('token')}` },
                             res.data
                         );
                         resolve(config);
@@ -63,7 +63,7 @@ service.interceptors.request.use(
             return config;
         } else {
             // 普通接口的token
-            config.headers.Authorization = `Bearer ${getUrlQuery()?.token}`;
+            config.headers.Authorization = `Bearer ${getUrlQuery('token')}`;
             return config;
         }
     },

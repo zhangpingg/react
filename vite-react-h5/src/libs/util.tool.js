@@ -52,14 +52,15 @@ const clearInvalidKey = (data, isCLearEmptyArray = true) => {
 
 /**
  * 获取url的query参数
+ * @param {String} key 属性key
  * @returns {object} url的参数对象
  */
-const getUrlQuery = () => {
+const getUrlQuery = (key) => {
     const url = window.location.href;
     if (url.indexOf('?') < 0) {
         return;
     }
-    return formatData(joinParam(url));
+    return key ? formatData(joinParam(url))?.[key] : formatData(joinParam(url));
 
     function joinParam(url) {
         const _obj = {};
