@@ -23,6 +23,7 @@ const PreviewImg = lazy(() => import('../pages/previewImg/index.jsx')); // 预�
 const DomToImage = lazy(() => import('../pages/domToImage/index.jsx')); // DOM转换为图片
 const ScrollListH5 = lazy(() => import('../pages/scrollListH5/index.jsx')); // 无线滚动
 const StickyLayout = lazy(() => import('../pages/stickyLayout/index.jsx')); // 粘性布局
+const EllipsisText = lazy(() => import('../pages/ellipsisText/index.jsx')); // 省略号（单行、多行、更多等）
 
 const Index = () => {
     return (
@@ -47,6 +48,7 @@ const Index = () => {
                     <Route path="/domToImage" element={<DomToImage />} />
                     <Route path="/scrollListH5" element={<ScrollListH5 />} />
                     <Route path="/stickyLayout" element={<StickyLayout />} />
+                    <Route path="/ellipsisText" element={<EllipsisText />} />
                     <Route path="*" element={<Err404 />} />
                 </Routes>
             </Suspense>

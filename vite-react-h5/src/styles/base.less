@@ -75,3 +75,23 @@ ul {
 }
 .setMarPadFontSize();
 
+// 省略号
+.ellipsis-1 {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.setEllipsisMultiple( @i:2, @n:5,) when(@i<=@n) {
+    .ellipsis-@{i} {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: unit(@i);
+        -webkit-box-orient: vertical;
+    }
+    .setEllipsisMultiple((@i+1), @n);
+}
+.setEllipsisMultiple();
+

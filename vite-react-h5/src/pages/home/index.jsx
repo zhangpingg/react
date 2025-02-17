@@ -69,6 +69,10 @@ const Index = () => {
             <Button size="mini" color="primary" onClick={() => jumpPage('stickyLayout')}>
                 粘性布局
             </Button>
+            <br />
+            <Button size="mini" color="primary" onClick={() => jumpPage('ellipsisText')}>
+                省略号（单行、多行、更多等）
+            </Button>
         </div>
     );
 };
