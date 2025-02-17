@@ -21,6 +21,7 @@ const WxAuthorizeAuthorize = lazy(() => import('../pages/wxAuthorize/authorize.j
 const WxAuthorizeHome = lazy(() => import('../pages/wxAuthorize/home.jsx')); // 微信授权登录-授权成功后首页 (微信公众号)
 const PreviewImg = lazy(() => import('../pages/previewImg/index.jsx')); // 预览图片
 const DomToImage = lazy(() => import('../pages/domToImage/index.jsx')); // DOM转换为图片
+const ScrollListH5 = lazy(() => import('../pages/scrollListH5/index.jsx')); // 无线滚动
 
 const Index = () => {
     return (
@@ -43,6 +44,7 @@ const Index = () => {
                     <Route path="/wxAuthorize-home" element={<WxAuthorizeHome />} />
                     <Route path="/previewImg" element={<PreviewImg />} />
                     <Route path="/domToImage" element={<DomToImage />} />
+                    <Route path="/scrollListH5" element={<ScrollListH5 />} />
                     <Route path="*" element={<Err404 />} />
                 </Routes>
             </Suspense>

@@ -31,7 +31,7 @@ const Index = () => {
     };
 
     useEffect(() => {
-        //wxAuthLogin(urlParams.code);
+        wxAuthLogin(urlParams.code);
     }, []);
 
     return <div className="fs-14 tac pt-100">登录中...</div>;

@@ -1,7 +1,7 @@
 ## vite react 移动端
 
 ```bash
-node: 18+
+node: 18+（建议22.14.0）
 npm run start
 npm run build
 ```
@@ -16,5 +16,8 @@ npm run build
 7) 微信公众号授权
 8) 弹框内的内容滚动（不要用antd中的Drawer, 使用antd-mobile中的Popup即可）
 9) 调用APP方法，测试下？
+10) 预览图片
+11) DOM转换为图片
+12) 无线滚动
 ```
 
