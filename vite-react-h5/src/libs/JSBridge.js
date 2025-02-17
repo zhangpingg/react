@@ -52,5 +52,3 @@ class JSBridge {
 
 const jsBridge = new JSBridge();
 export default jsBridge;
-
-// export default JSBridge;

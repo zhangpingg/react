@@ -19,6 +19,7 @@ const RouteJumpParamIndex = lazy(() => import('../pages/routeJumpParam/index.jsx
 const RouteJumpParamDetails = lazy(() => import('../pages/routeJumpParam/details.jsx')); // 路由跳转传参-详情页
 const WxAuthorizeAuthorize = lazy(() => import('../pages/wxAuthorize/authorize.jsx')); // 微信授权登录-授权页 (微信公众号)
 const WxAuthorizeHome = lazy(() => import('../pages/wxAuthorize/home.jsx')); // 微信授权登录-授权成功后首页 (微信公众号)
+const PreviewImg = lazy(() => import('../pages/previewImg/index.jsx')); // 预览图片
 
 const Index = () => {
     return (
@@ -39,6 +40,7 @@ const Index = () => {
                     <Route path="/routeJumpParam-details" element={<RouteJumpParamDetails />} />
                     <Route path="/wxAuthorize-authorize" element={<WxAuthorizeAuthorize />} />
                     <Route path="/wxAuthorize-home" element={<WxAuthorizeHome />} />
+                    <Route path="/previewImg" element={<PreviewImg />} />
                     <Route path="*" element={<Err404 />} />
                 </Routes>
             </Suspense>
