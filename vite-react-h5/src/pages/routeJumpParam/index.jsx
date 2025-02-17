@@ -6,7 +6,8 @@
 
 import React, { useEffect } from 'react';
 import { Button } from 'antd-mobile';
-import { useNavigate } from 'react-router-dom';
+//import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 
 const Index = () => {
     const navigate = useNavigate();
