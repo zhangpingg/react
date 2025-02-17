@@ -7,7 +7,7 @@
 import React, { useEffect } from 'react';
 
 const Index = () => {
-    return <div>home</div>;
+    return <div>test</div>;
 };
 
 export default Index;
