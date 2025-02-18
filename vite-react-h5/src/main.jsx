@@ -1,3 +1,4 @@
+import React from 'react';
 import { createRoot } from 'react-dom/client';
 // 数据存储
 import { Provider } from 'react-redux';

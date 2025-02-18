@@ -3,10 +3,18 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 import proxy from './config/proxy';
 import postcssPxtorem from 'postcss-pxtorem';
+import zipPack from 'vite-plugin-zip-pack';
 
 // https://vite.dev/config/
 export default defineConfig({
-    plugins: [react()],
+    plugins: [
+        react(),
+        zipPack({
+            inDir: 'dist',
+            outDir: './',
+            pathPrefix: 'dist',
+        }),
+    ],
     server: {
         port: 8080,
         cors: true,
