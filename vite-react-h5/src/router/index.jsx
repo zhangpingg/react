@@ -24,6 +24,7 @@ const DomToImage = lazy(() => import('../pages/domToImage/index.jsx')); // DOM�
 const ScrollListH5 = lazy(() => import('../pages/scrollListH5/index.jsx')); // 无线滚动
 const StickyLayout = lazy(() => import('../pages/stickyLayout/index.jsx')); // 粘性布局
 const EllipsisText = lazy(() => import('../pages/ellipsisText/index.jsx')); // 省略号（单行、多行、更多等）
+const InputKeyboard = lazy(() => import('../pages/inputKeyboard/index.jsx')); // 安卓手机-点击输入框，被键盘挡住问题
 
 const Index = () => {
     return (
@@ -49,6 +50,7 @@ const Index = () => {
                     <Route path="/scrollListH5" element={<ScrollListH5 />} />
                     <Route path="/stickyLayout" element={<StickyLayout />} />
                     <Route path="/ellipsisText" element={<EllipsisText />} />
+                    <Route path="/inputKeyboard" element={<InputKeyboard />} />
                     <Route path="*" element={<Err404 />} />
                 </Routes>
             </Suspense>
