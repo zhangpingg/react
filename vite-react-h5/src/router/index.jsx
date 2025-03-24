@@ -25,6 +25,7 @@ const ScrollListH5 = lazy(() => import('../pages/scrollListH5/index.jsx')); // �
 const StickyLayout = lazy(() => import('../pages/stickyLayout/index.jsx')); // 粘性布局
 const EllipsisText = lazy(() => import('../pages/ellipsisText/index.jsx')); // 省略号（单行、多行、更多等）
 const InputKeyboard = lazy(() => import('../pages/inputKeyboard/index.jsx')); // 安卓手机-点击输入框，被键盘挡住问题
+const PageLoad = lazy(() => import('../pages/pageLoad/index.jsx')); // 分页加载更多
 
 const Index = () => {
     return (
@@ -51,6 +52,7 @@ const Index = () => {
                     <Route path="/stickyLayout" element={<StickyLayout />} />
                     <Route path="/ellipsisText" element={<EllipsisText />} />
                     <Route path="/inputKeyboard" element={<InputKeyboard />} />
+                    <Route path="/pageLoad" element={<PageLoad />} />
                     <Route path="*" element={<Err404 />} />
                 </Routes>
             </Suspense>

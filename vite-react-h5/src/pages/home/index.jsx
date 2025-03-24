@@ -73,6 +73,10 @@ const Index = () => {
             <Button size="mini" color="primary" onClick={() => jumpPage('ellipsisText')}>
                 省略号（单行、多行、更多等）
             </Button>
+            <br />
+            <Button size="mini" color="primary" onClick={() => jumpPage('pageLoad')}>
+                分页加载更多
+            </Button>
         </div>
     );
 };
