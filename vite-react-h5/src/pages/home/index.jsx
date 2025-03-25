@@ -74,6 +74,10 @@ const Index = () => {
                 省略号（单行、多行、更多等）
             </Button>
             <br />
+            <Button size="mini" color="primary" onClick={() => jumpPage('inputKeyboard')}>
+                安卓手机-点击输入框，被键盘挡住问题
+            </Button>
+            <br />
             <Button size="mini" color="primary" onClick={() => jumpPage('pageLoad')}>
                 分页加载更多
             </Button>

@@ -4,9 +4,10 @@
  * @Description: 分页加载更多
  */
 
-import React, { useState } from 'react';
-import { PullToRefresh, InfiniteScroll, List } from 'antd-mobile';
+import React, { useEffect, useState } from 'react';
+import { PullToRefresh, InfiniteScroll } from 'antd-mobile';
 import styles from './index.module.less';
+import cn from 'classnames';
 
 const Index = () => {
     const [data, setData] = useState([]);
@@ -45,22 +46,30 @@ const Index = () => {
         setCurrent((prev) => ++prev);
     };
 
+    useEffect(() => {
+        pullToRefresh();
+    }, []);
+
     return (
-        <div className="fs-14">
+        <div className={cn({ 'fs-14': true, [styles['pl']]: true })}>
             <PullToRefresh onRefresh={pullToRefresh}>
-                <div className={styles['box']}>
-                    <div>
-                        {data.map((item, index) => (
-                            <p key={index} className={styles['box-item']}>
-                                {item}
-                            </p>
-                        ))}
+                {data.length > 0 ? (
+                    <div className={styles['pl-list']}>
+                        <div>
+                            {data.map((item, index) => (
+                                <p key={index} className={styles['pl-list-item']}>
+                                    {item}
+                                </p>
+                            ))}
+                        </div>
+                        <InfiniteScroll loadMore={loadMore} hasMore={hasMore} threshold={100}>
+                            {/*自定义内容*/}
+                            {/*{hasMore ? <span>Loading</span> : <span>--- 我是有底线的 ---</span>}*/}
+                        </InfiniteScroll>
                     </div>
-                    <InfiniteScroll loadMore={loadMore} hasMore={hasMore} threshold={100}>
-                        {/*自定义内容*/}
-                        {/*{hasMore ? <span>Loading</span> : <span>--- 我是有底线的 ---</span>}*/}
-                    </InfiniteScroll>
-                </div>
+                ) : (
+                    <div className={styles['pl-empty']}>暂无数据</div>
+                )}
             </PullToRefresh>
         </div>
     );
