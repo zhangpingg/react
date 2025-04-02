@@ -5,9 +5,20 @@
  */
 
 import React, { useEffect } from 'react';
+import { SafeArea } from 'antd-mobile';
 
 const Index = () => {
-    return <div>test</div>;
+    return (
+        <div>
+            <div style={{ background: '#ace0ff' }}>
+                <SafeArea position="top" />
+            </div>
+            <div>111</div>
+            <div style={{ background: '#ffcfac' }}>
+                <SafeArea position="bottom" />
+            </div>
+        </div>
+    );
 };
 
 export default Index;

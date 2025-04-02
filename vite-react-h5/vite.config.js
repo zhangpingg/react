@@ -16,6 +16,7 @@ export default defineConfig({
         }),
     ],
     server: {
+        open: '/home', // 当在开发阶段，如果你想默认打开某个页面
         port: 8080,
         cors: true,
         origin: 'http://localhost:8080',

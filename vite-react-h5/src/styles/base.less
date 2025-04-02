@@ -4,6 +4,12 @@ body {
     padding: 0;
     margin: 0;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 div,
 ul,
 li,
@@ -17,81 +23,4 @@ li {
 ul {
     list-style-type: none;
 }
-.por {
-    position: relative;
-}
-.poa {
-    position: absolute;
-}
-.tac {
-    text-align: center;
-}
-.tar {
-    text-align: right;
-}
-.w-100 {
-    width: 100%;
-}
-.db {
-    display: block;
-}
-.dib {
-    display: inline-block;
-}
-.dn {
-    display: none;
-}
-
-// margin, padding, font-size
-.setMarPadFontSize( @i:0, @n:100,) when(@i<@n) {
-    .pt-@{i} {
-        padding-top: unit(@i, px);
-    }
-    .pr-@{i} {
-        padding-right: unit(@i, px);
-    }
-    .pb-@{i} {
-        padding-bottom: unit(@i, px);
-    }
-    .pl-@{i} {
-        padding-left: unit(@i, px);
-    }
-    .mt-@{i} {
-        margin-top: unit(@i, px);
-    }
-    .mr-@{i} {
-        margin-right: unit(@i, px);
-    }
-    .mb-@{i} {
-        margin-bottom: unit(@i, px);
-    }
-    .ml-@{i} {
-        margin-left: unit(@i, px);
-    }
-    .fs-@{i} {
-        font-size: unit(@i, px);
-    }
-    .setMarPadFontSize((@i+1), @n);
-}
-.setMarPadFontSize();
-
-// 省略号
-.ellipsis-1 {
-    display: block;
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-}
-.setEllipsisMultiple( @i:2, @n:5,) when(@i<=@n) {
-    .ellipsis-@{i} {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-line-clamp: unit(@i);
-        -webkit-box-orient: vertical;
-    }
-    .setEllipsisMultiple((@i+1), @n);
-}
-.setEllipsisMultiple();
 
