@@ -85,6 +85,10 @@ const Index = () => {
             <Button size="mini" color="primary" onClick={() => jumpPage('twoTableScrollLinkage')}>
                 2个Table横向滚动，互相联动
             </Button>
+            <br />
+            <Button size="mini" color="primary" onClick={() => jumpPage('phoneBook')}>
+                列表的分类显示和快速定位, 即电话簿
+            </Button>
         </div>
     );
 };

@@ -27,6 +27,7 @@ const EllipsisText = lazy(() => import('../pages/ellipsisText/index.jsx')); // �
 const InputKeyboard = lazy(() => import('../pages/inputKeyboard/index.jsx')); // 安卓手机-点击输入框，被键盘挡住问题
 const PageLoad = lazy(() => import('../pages/pageLoad/index.jsx')); // 分页加载更多
 const TwoTableScrollLinkage = lazy(() => import('../pages/twoTableScrollLinkage/index.jsx')); // 2个Table横向滚动，互相联动
+const PhoneBook = lazy(() => import('../pages/phoneBook/index.jsx')); // 列表的分类显示和快速定位, 即电话簿
 
 const Index = () => {
     return (
@@ -55,6 +56,7 @@ const Index = () => {
                     <Route path="/inputKeyboard" element={<InputKeyboard />} />
                     <Route path="/pageLoad" element={<PageLoad />} />
                     <Route path="/twoTableScrollLinkage" element={<TwoTableScrollLinkage />} />
+                    <Route path="/phoneBook" element={<PhoneBook />} />
                     <Route path="*" element={<Err404 />} />
                 </Routes>
             </Suspense>
