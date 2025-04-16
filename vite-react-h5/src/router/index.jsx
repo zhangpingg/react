@@ -26,6 +26,7 @@ const StickyLayout = lazy(() => import('../pages/stickyLayout/index.jsx')); // �
 const EllipsisText = lazy(() => import('../pages/ellipsisText/index.jsx')); // 省略号（单行、多行、更多等）
 const InputKeyboard = lazy(() => import('../pages/inputKeyboard/index.jsx')); // 安卓手机-点击输入框，被键盘挡住问题
 const PageLoad = lazy(() => import('../pages/pageLoad/index.jsx')); // 分页加载更多
+const TwoTableScrollLinkage = lazy(() => import('../pages/twoTableScrollLinkage/index.jsx')); // 2个Table横向滚动，互相联动
 
 const Index = () => {
     return (
@@ -53,6 +54,7 @@ const Index = () => {
                     <Route path="/ellipsisText" element={<EllipsisText />} />
                     <Route path="/inputKeyboard" element={<InputKeyboard />} />
                     <Route path="/pageLoad" element={<PageLoad />} />
+                    <Route path="/twoTableScrollLinkage" element={<TwoTableScrollLinkage />} />
                     <Route path="*" element={<Err404 />} />
                 </Routes>
             </Suspense>

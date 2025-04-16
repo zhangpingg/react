@@ -8,7 +8,7 @@ import Vconsole from 'vconsole'; // 调试面板
 import AppRouter from './router/index.jsx'; // 路由
 import 'antd/dist/reset.css'; // antd5样式
 import 'react-photo-view/dist/react-photo-view.css'; // 预览图片的样式
-import './styles//base.less';
+import './styles/index.less';
 import { getEnvironment } from '@/libs/util.win.js';
 import { setWxConfig } from '@/libs/wx.js';
 

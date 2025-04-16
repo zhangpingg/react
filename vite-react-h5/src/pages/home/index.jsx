@@ -81,6 +81,10 @@ const Index = () => {
             <Button size="mini" color="primary" onClick={() => jumpPage('pageLoad')}>
                 分页加载更多
             </Button>
+            <br />
+            <Button size="mini" color="primary" onClick={() => jumpPage('twoTableScrollLinkage')}>
+                2个Table横向滚动，互相联动
+            </Button>
         </div>
     );
 };
