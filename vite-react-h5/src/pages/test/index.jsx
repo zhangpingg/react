@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import cn from 'classnames';
 import _ from 'lodash';
 import './styles.less';
