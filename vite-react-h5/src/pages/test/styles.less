@@ -1,72 +1,59 @@
 .box {
-    width: 375px;
+    width: 100%;
     height: 250px;
     overflow: auto;
-    background-color: yellow;
-    position: relative;
-
+    background: #ccc;
     .table-container {
         position: relative;
         width: max-content;
-
         .table-header {
             display: flex;
             position: sticky;
             top: 0;
-            background-color: yellow;
             z-index: 3;
             min-width: 100%;
-
-            .table-header-item {
-                width: 150px;
+            .table-header-cell {
+                width: 100px;
                 height: 50px;
                 border: 1px solid #000;
-                background: yellow;
+                background: #999;
             }
-
-            .sticky-col {
+            .table-header-cellSticky {
                 position: sticky;
-                left: 0;
+                left: 0px;
                 z-index: 2;
                 box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
-                background: yellow;
             }
-            .sticky-col2 {
-                position: sticky;
-                left: 150px;
-                z-index: 2;
-                box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
-                background: yellow;
-            }
+            //.table-header-cellSticky2 {
+            //    position: sticky;
+            //    left: 100px;
+            //    z-index: 2;
+            //    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.5);
+            //}
         }
-
         .table-body {
             .table-body-row {
                 display: flex;
                 min-width: 100%;
-
                 .table-body-cell {
-                    width: 150px;
+                    width: 100px;
                     height: 100px;
                     border: 1px solid #000;
                 }
-
-                .sticky-col {
+                .table-body-cellSticky {
                     position: sticky;
                     left: 0;
                     z-index: 2;
                     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
-                    background: yellow;
-                    overflow: hidden;
+                    background: #999;
                 }
-                .sticky-col2 {
-                    position: sticky;
-                    left: 150px;
-                    z-index: 2;
-                    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
-                    background: yellow;
-                    overflow: hidden;
-                }
+                //.table-body-cellSticky2 {
+                //    position: sticky;
+                //    left: 100px;
+                //    z-index: 2;
+                //    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+                //    background: #999;
+                //}
             }
         }
     }

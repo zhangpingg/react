@@ -1,22 +1,11 @@
-const columns = [
-    { title: '姓名', dataIndex: 'name', width: 50, fixed: 'left' },
-    { title: '年龄', dataIndex: 'age', width: 100 },
-    { title: '城市', dataIndex: 'city', width: 100 },
-    { title: '地址', dataIndex: 'address', width: 100 },
-    { title: '年龄', dataIndex: 'age', width: 100 },
-    { title: '城市', dataIndex: 'city', width: 100 },
-    { title: '地址', dataIndex: 'address', width: 100 },
+const header = [{ name: '品牌1' }, { name: '品牌2' }, { name: '品牌3' }, { name: '品牌4' }];
+
+const data = [
+    { name: '厂家名称', aa: '名称1', bb: '名称2', cc: '名称3', dd: '名称4' },
+    { name: '规格', aa: '规格1', bb: '规格2', cc: '规格3', dd: '规格4' },
+    { name: '层级', aa: '层级1', bb: '层级2', cc: '层级3', dd: '层级4' },
+    { name: '花纹', aa: '花纹1', bb: '花纹2', cc: '花纹3', dd: '花纹4' },
+    { name: '车型', aa: '车型1', bb: '车型2', cc: '车型3', dd: '车型4' },
 ];
 
-const list = [
-    { key: 1, name: '张三', age: 18, city: '上海', address: '上海xxx小区' },
-    { key: 2, name: '李四', age: 19, city: '杭州', address: '杭州xxx小区' },
-    { key: 3, name: '王五', age: 20, city: '深圳', address: '深圳xxx小区' },
-    { key: 4, name: '赵六', age: 21, city: '北京', address: '北京xxx小区' },
-    { key: 5, name: '张三', age: 18, city: '上海', address: '上海xxx小区' },
-    { key: 6, name: '李四', age: 19, city: '杭州', address: '杭州xxx小区' },
-    { key: 7, name: '王五', age: 20, city: '深圳', address: '深圳xxx小区' },
-    { key: 8, name: '赵六', age: 21, city: '北京', address: '北京xxx小区' },
-];
-
-export { columns, list };
+export { header, data };
