@@ -1,38 +1,39 @@
-/*
- * @Author: zhangping
- * @Date: 2025-02-17 15:11:26
- * @Description: 菜单名称-模块名称
- */
+import React, { useEffect, useRef } from 'react';
+import './styles.less';
 
-import React from 'react';
-import { IndexBar, List } from 'antd-mobile';
-
-const list = [
-    { title: 'A', nav: '1', children: [{ name: 'A1' }, { name: 'A2' }, { name: 'A2' }] },
-    { title: 'B', nav: '2', children: [{ name: 'B1' }, { name: 'B2' }, { name: 'B2' }] },
-    { title: 'C', nav: '3', children: [{ name: 'C1' }, { name: 'C2' }, { name: 'C2' }] },
-    { title: 'D', nav: '4', children: [{ name: 'D1' }, { name: 'D2' }, { name: 'D2' }] },
-    { title: 'E', nav: '5', children: [{ name: 'E1' }, { name: 'E2' }, { name: 'E2' }] },
-    { title: 'F', nav: '6', children: [{ name: 'F1' }, { name: 'F2' }, { name: 'F2' }] },
-];
-
-export default () => {
+const Index = () => {
     return (
-        <div style={{ height: window.innerHeight }}>
-            <IndexBar>
-                {list.map((item) => {
-                    const { title, nav, children } = item;
-                    return (
-                        <IndexBar.Panel index={nav} title={`标题${title}`} key={`标题${title}`}>
-                            <List>
-                                {children.map((itemIn, index) => (
-                                    <List.Item key={index}>{itemIn.name}</List.Item>
-                                ))}
-                            </List>
-                        </IndexBar.Panel>
-                    );
-                })}
-            </IndexBar>
+        <div className="box">
+            <div className="table-container">
+                <div className="table-header">
+                    <p className="table-header-item fs-14 sticky-col">表头1</p>
+                    <p className="table-header-item fs-14 sticky-col2">表头2</p>
+                    <p className="table-header-item fs-14 ">表头3</p>
+                    <p className="table-header-item fs-14 ">表头4</p>
+                </div>
+                <div className="table-body">
+                    <div className="table-body-row">
+                        <p className="table-body-cell fs-14 sticky-col">1-1</p>
+                        <p className="table-body-cell fs-14 sticky-col2">1-2</p>
+                        <p className="table-body-cell fs-14">1-3</p>
+                        <p className="table-body-cell fs-14">1-4</p>
+                    </div>
+                    <div className="table-body-row">
+                        <p className="table-body-cell fs-14 sticky-col">2-1</p>
+                        <p className="table-body-cell fs-14 sticky-col2">2-2</p>
+                        <p className="table-body-cell fs-14">2-3</p>
+                        <p className="table-body-cell fs-14">2-4</p>
+                    </div>
+                    <div className="table-body-row">
+                        <p className="table-body-cell fs-14 sticky-col">3-1</p>
+                        <p className="table-body-cell fs-14 sticky-col2">3-2</p>
+                        <p className="table-body-cell fs-14">3-3</p>
+                        <p className="table-body-cell fs-14">3-4</p>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };
+
+export default Index;
