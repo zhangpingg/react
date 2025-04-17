@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import cn from 'classnames';
 import _ from 'lodash';
 import './styles.less';
@@ -23,18 +23,24 @@ const Index = () => {
     const fixedRow = (item) => {
         if (item.id === fixedRowId) {
             setFixedRowId(null);
-        } else {
-            setFixedRowId(item.id);
             setHeader((prev) => {
-                console.log(11, prev);
-                let _list = _.cloneDeep(prev);
-                var _removedItem = _list.splice(getIndex(_list, item.id), 1)[0];
-                _list.splice(1, 0, _removedItem);
-                console.log(22, _list);
+                let _list = _.cloneDeep(prev).sort((a, b) => a.id - b.id);
                 return _list;
             });
             setList((prev) => {
-                let _list = _.cloneDeep(prev);
+                let _list = _.cloneDeep(prev).sort((a, b) => a.id - b.id);
+                return _list;
+            });
+        } else {
+            setFixedRowId(item.id);
+            setHeader((prev) => {
+                let _list = _.cloneDeep(prev).sort((a, b) => a.id - b.id);
+                var _removedItem = _list.splice(getIndex(_list, item.id), 1)[0];
+                _list.splice(1, 0, _removedItem);
+                return _list;
+            });
+            setList((prev) => {
+                let _list = _.cloneDeep(prev).sort((a, b) => a.id - b.id);
                 var _removedItem = _list.splice(getIndex(_list, item.id), 1)[0];
                 _list.splice(1, 0, _removedItem);
                 return _list;

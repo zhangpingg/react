@@ -89,8 +89,13 @@ const Index = () => {
             <Button size="mini" color="primary" onClick={() => jumpPage('phoneBook')}>
                 列表的分类显示和快速定位, 即电话簿
             </Button>
+            <br />
+            <Button size="mini" color="primary" onClick={() => jumpPage('customTableFixedRowScroll')}>
+                自定义表格，固定列滚动
+            </Button>
         </div>
     );
 };
 
 export default Index;
+
