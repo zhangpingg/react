@@ -1,96 +1,14 @@
-import React, { useState } from 'react';
-import cn from 'classnames';
-import _ from 'lodash';
-import './styles.less';
-import { resHeader, resData } from './const.js';
+import FixedOneRow from './fixedOneRow/index.jsx';
+import FixedMultipleRow from './fixedMultipleRow/index.jsx';
 
 const Index = () => {
-    const [fixedRowId, setFixedRowId] = useState();
-    const [header, setHeader] = useState(resHeader);
-    const [list, setList] = useState(resData);
-
-    // 获取索引
-    const getIndex = (list, id) => {
-        let _index = 0;
-        list.map((item, index) => {
-            if (item.id === id) {
-                _index = index;
-            }
-        });
-        return _index;
-    };
-    // 固定列
-    const fixedRow = (item) => {
-        if (item.id === fixedRowId) {
-            setFixedRowId(null);
-            setHeader((prev) => {
-                let _list = _.cloneDeep(prev).sort((a, b) => a.id - b.id);
-                return _list;
-            });
-            setList((prev) => {
-                let _list = _.cloneDeep(prev).sort((a, b) => a.id - b.id);
-                return _list;
-            });
-        } else {
-            setFixedRowId(item.id);
-            setHeader((prev) => {
-                let _list = _.cloneDeep(prev).sort((a, b) => a.id - b.id);
-                var _removedItem = _list.splice(getIndex(_list, item.id), 1)[0];
-                _list.splice(1, 0, _removedItem);
-                return _list;
-            });
-            setList((prev) => {
-                let _list = _.cloneDeep(prev).sort((a, b) => a.id - b.id);
-                var _removedItem = _list.splice(getIndex(_list, item.id), 1)[0];
-                _list.splice(1, 0, _removedItem);
-                return _list;
-            });
-        }
-    };
-
     return (
-        <div className="ctfrs">
-            <div className="table-container">
-                <div className="table-header">
-                    {header.map((item, index) => {
-                        return (
-                            <p
-                                key={index}
-                                className={cn({
-                                    'table-header-cell fs-14': true,
-                                    'table-header-cellSticky': index === 0,
-                                    'table-header-cellStickyOne': fixedRowId === item.id,
-                                })}
-                                onClick={() => {
-                                    fixedRow(item);
-                                }}
-                            >
-                                {item.name}
-                            </p>
-                        );
-                    })}
-                </div>
-                <div className="table-body">
-                    {list.map((item, index) => {
-                        return (
-                            <div
-                                key={index}
-                                className={cn({
-                                    'table-body-row': true,
-                                    'table-body-row-cellSticky': index === 0,
-                                    'table-body-row-cellStickyOne': item.id === fixedRowId,
-                                })}
-                            >
-                                <p className="table-body-cell fs-14">{item.aa}</p>
-                                <p className="table-body-cell fs-14 ">{item.bb}</p>
-                                <p className="table-body-cell fs-14">{item.cc}</p>
-                                <p className="table-body-cell fs-14">{item.dd}</p>
-                                <p className="table-body-cell fs-14">{item.ee}</p>
-                            </div>
-                        );
-                    })}
-                </div>
-            </div>
+        <div>
+            <p className="fs-14">固定一个列（头部可点击，下面同理）</p>
+            <FixedOneRow />
+
+            <p className="fs-14 mt-20">固定多个列（目前支持2个列，后期可以加）</p>
+            <FixedMultipleRow />
         </div>
     );
 };
