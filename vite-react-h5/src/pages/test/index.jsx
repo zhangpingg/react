@@ -59,7 +59,7 @@ const Index = () => {
                                 className={cn({
                                     'table-header-cell fs-14': true,
                                     'table-header-cellSticky': index === 0,
-                                    'table-header-cellSticky2': fixedRowId === item.id,
+                                    'table-header-cellStickyOne': fixedRowId === item.id,
                                 })}
                                 onClick={() => {
                                     fixedRow(item);
@@ -78,7 +78,7 @@ const Index = () => {
                                 className={cn({
                                     'table-body-row': true,
                                     'table-body-row-cellSticky': index === 0,
-                                    'table-body-row-cellSticky2': item.id === fixedRowId,
+                                    'table-body-row-cellStickyOne': item.id === fixedRowId,
                                 })}
                             >
                                 <p className="table-body-cell fs-14">{item.aa}</p>
@@ -96,4 +96,3 @@ const Index = () => {
 };
 
 export default Index;
-
