@@ -1,0 +1,72 @@
+.fmr {
+    width: 100%;
+    height: 250px;
+    overflow: auto;
+    .table-container {
+        position: relative;
+        width: max-content;
+        .table-header {
+            display: flex;
+            position: sticky;
+            top: 0;
+            z-index: 3;
+            min-width: 100%;
+            .table-header-cell {
+                width: 100px;
+                height: 50px;
+                border: 1px solid #000;
+                background: #999;
+            }
+            .table-header-cellSticky {
+                position: sticky;
+                left: 0px;
+                z-index: 2;
+                box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+            }
+            .table-header-cellStickyOne {
+                position: sticky;
+                left: 100px;
+                z-index: 2;
+                box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.5);
+            }
+            .table-header-cellStickyTwo {
+                position: sticky;
+                left: 200px;
+                z-index: 2;
+                box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.5);
+            }
+        }
+        .table-body {
+            .table-body-row {
+                display: inline-block;
+                .table-body-cell {
+                    width: 100px;
+                    height: 100px;
+                    border: 1px solid #000;
+                }
+            }
+            .table-body-row-cellSticky {
+                position: sticky;
+                left: 0;
+                z-index: 2;
+                box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+                background: #999;
+            }
+            .table-body-row-cellStickyOne {
+                position: sticky;
+                left: 100px;
+                z-index: 2;
+                box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+                background: #999;
+            }
+            .table-body-row-cellStickyTwo {
+                position: sticky;
+                left: 200px;
+                z-index: 2;
+                box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+                background: #999;
+            }
+        }
+    }
+}
+
