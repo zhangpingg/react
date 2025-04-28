@@ -13,35 +13,33 @@ const Index = () => {
 
     return (
         <div>
-            <PhotoProvider>
-                <div>
-                    {/* 显示缩略图 */}
-                    <div>
-                        {imgList2.map((item, index) => (
-                            <img
-                                key={index}
-                                src={item.src}
-                                style={{ width: '100px', height: '100px', marginRight: '10px' }}
-                                onClick={() => {
-                                    setPreviewIndex(index);
-                                    setIsPreview(true);
-                                }}
-                            />
-                        ))}
-                    </div>
-                    {/* PhotoSlider 组件 */}
-                    <PhotoSlider
-                        visible={isPreview}
-                        onClose={() => {
-                            setIsPreview(false);
-                        }}
-                        index={previewIndex}
-                        images={imgList2}
-                        onIndexChange={(photoIndex) => {
-                            setPreviewIndex(photoIndex);
+            {/* 显示缩略图 */}
+            <div>
+                {imgList2.map((item, index) => (
+                    <img
+                        key={index}
+                        src={item.src}
+                        style={{ width: '100px', height: '100px', marginRight: '10px' }}
+                        onClick={() => {
+                            setPreviewIndex(index);
+                            setIsPreview(true);
                         }}
                     />
-                </div>
+                ))}
+            </div>
+            {/*预览图片组件*/}
+            <PhotoProvider>
+                <PhotoSlider
+                    visible={isPreview}
+                    images={imgList2}
+                    index={previewIndex}
+                    onIndexChange={(photoIndex) => {
+                        setPreviewIndex(photoIndex);
+                    }}
+                    onClose={() => {
+                        setIsPreview(false);
+                    }}
+                />
             </PhotoProvider>
         </div>
     );

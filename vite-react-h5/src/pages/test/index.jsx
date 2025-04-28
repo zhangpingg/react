@@ -1,98 +1,68 @@
 import React, { useState } from 'react';
-import cn from 'classnames';
-import _ from 'lodash';
-import './styles.less';
-import { resHeader, resData } from './const.js';
+//import { Search, ArrowLeft } from 'lucide-react';
+//import { motion } from 'framer-motion';
 
-const Index = () => {
-    const [fixedRowId, setFixedRowId] = useState();
-    const [header, setHeader] = useState(resHeader);
-    const [list, setList] = useState(resData);
+const MobileSearchComponent = () => {
+    const [searchValue, setSearchValue] = useState('');
+    const [isSearchActive, setIsSearchActive] = useState(false);
 
-    // 获取索引
-    const getIndex = (list, id) => {
-        let _index = 0;
-        list.map((item, index) => {
-            if (item.id === id) {
-                _index = index;
-            }
-        });
-        return _index;
+    const handleSearchClick = () => {
+        setIsSearchActive(true);
     };
-    // 固定列
-    const fixedRow = (item) => {
-        if (item.id === fixedRowId) {
-            setFixedRowId(null);
-            setHeader((prev) => {
-                let _list = _.cloneDeep(prev).sort((a, b) => a.id - b.id);
-                return _list;
-            });
-            setList((prev) => {
-                let _list = _.cloneDeep(prev).sort((a, b) => a.id - b.id);
-                return _list;
-            });
-        } else {
-            setFixedRowId(item.id);
-            setHeader((prev) => {
-                let _list = _.cloneDeep(prev).sort((a, b) => a.id - b.id);
-                var _removedItem = _list.splice(getIndex(_list, item.id), 1)[0];
-                _list.splice(1, 0, _removedItem);
-                return _list;
-            });
-            setList((prev) => {
-                let _list = _.cloneDeep(prev).sort((a, b) => a.id - b.id);
-                var _removedItem = _list.splice(getIndex(_list, item.id), 1)[0];
-                _list.splice(1, 0, _removedItem);
-                return _list;
-            });
-        }
+
+    const handleBackClick = () => {
+        setIsSearchActive(false);
+        setSearchValue('');
+    };
+
+    const handleSearchChange = (e) => {
+        setSearchValue(e?.target?.value ?? '');
     };
 
     return (
-        <div className="box">
-            <div className="table-container">
-                <div className="table-header">
-                    {header.map((item, index) => {
-                        return (
-                            <p
-                                key={index}
-                                className={cn({
-                                    'table-header-cell fs-14': true,
-                                    'table-header-cellSticky': index === 0,
-                                    'table-header-cellStickyOne': fixedRowId === item.id,
-                                })}
-                                onClick={() => {
-                                    fixedRow(item);
-                                }}
-                            >
-                                {item.name}
-                            </p>
-                        );
-                    })}
+        <div className="relative w-full max-w-md mx-auto p-4">
+            {!isSearchActive ? (
+                <div
+                    className="flex items-center justify-between bg-gray-100 rounded-full px-4 py-2"
+                    onClick={handleSearchClick}
+                >
+                    <div className="flex items-center">
+                        11
+                        <span className="text-gray-500">搜索</span>
+                    </div>
                 </div>
-                <div className="table-body">
-                    {list.map((item, index) => {
-                        return (
-                            <div
-                                key={index}
-                                className={cn({
-                                    'table-body-row': true,
-                                    'table-body-row-cellSticky': index === 0,
-                                    'table-body-row-cellStickyOne': item.id === fixedRowId,
-                                })}
-                            >
-                                <p className="table-body-cell fs-14">{item.aa}</p>
-                                <p className="table-body-cell fs-14 ">{item.bb}</p>
-                                <p className="table-body-cell fs-14">{item.cc}</p>
-                                <p className="table-body-cell fs-14">{item.dd}</p>
-                                <p className="table-body-cell fs-14">{item.ee}</p>
-                            </div>
-                        );
-                    })}
+            ) : (
+                <div className="flex items-center bg-white rounded-full shadow-md px-4 py-2">
+                    <button onClick={handleBackClick} className="mr-2">
+                        <ArrowLeft className="text-gray-600" size={20} />
+                    </button>
+                    <input
+                        type="text"
+                        value={searchValue}
+                        onChange={handleSearchChange}
+                        placeholder="请输入搜索内容"
+                        className="flex-1 outline-none text-gray-800"
+                        autoFocus
+                    />
+                    {searchValue && (
+                        <button onClick={() => setSearchValue('')} className="ml-2">
+                            11
+                        </button>
+                    )}
                 </div>
-            </div>
+            )}
+
+            <footer className="mt-8 text-center text-sm text-gray-500">
+                <div>
+                    created by{' '}
+                    <a href="https://space.coze.cn" className="text-blue-500 hover:underline">
+                        coze space
+                    </a>
+                </div>
+                <div>页面内容均由 AI 生成，仅供参考</div>
+            </footer>
         </div>
     );
 };
 
-export default Index;
+export default MobileSearchComponent;

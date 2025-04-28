@@ -11,8 +11,8 @@ const Index = () => {
 
     return (
         <div>
-            <div className={cn('ellipsis-1')}>{str}</div>
-            <div className={cn('ellipsis-3 mt-20 mb-30')}>{str}</div>
+            <div className={'e-1'}>{str}</div>
+            <div className={cn('e-3 mt-20 mb-30')}>{str}</div>
             <Switch
                 checked={ellipsis}
                 onChange={() => {
