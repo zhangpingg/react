@@ -100,6 +100,7 @@ const Index = () => {
                         );
                     })}
                 </div>
+                <div className="pt-10 pb-10 fs-14 table-title">基本信息</div>
                 <div className="table-body">
                     {list.map((item, index) => {
                         return (
