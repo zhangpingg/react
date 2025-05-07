@@ -31,13 +31,24 @@
             }
         }
         .table-title {
-            border: 1px solid #f00;
             position: sticky;
-            left: 0;
             top: 50px;
+            left: 0;
             z-index: 3;
-            width: 100vw;
+            display: flex;
+            font-weight: 600;
             background: #fff;
+            color: #333;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+            .table-title-cell {
+                width: 114px;
+            }
+            .table-title-cellSticky {
+                position: sticky;
+                left: 0px;
+                z-index: 2;
+                width: 104px;
+            }
         }
         .table-body {
             .table-body-row {
@@ -65,3 +76,4 @@
         }
     }
 }
+

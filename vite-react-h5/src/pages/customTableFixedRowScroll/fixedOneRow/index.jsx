@@ -6,8 +6,8 @@ import { resHeader, resData } from './const.js';
 
 const Index = () => {
     const [fixedRowId, setFixedRowId] = useState();
-    const [header, setHeader] = useState(resHeader);
-    const [list, setList] = useState(resData);
+    const [headerList, setHeaderList] = useState(resHeader);
+    const [bodyList, setBodyList] = useState(resData);
 
     // 获取索引
     const getIndex = (list, id) => {
@@ -23,23 +23,23 @@ const Index = () => {
     const fixedRow = (item) => {
         if (item.id === fixedRowId) {
             setFixedRowId(null);
-            setHeader((prev) => {
+            setHeaderList((prev) => {
                 let _list = _.cloneDeep(prev).sort((a, b) => a.id - b.id);
                 return _list;
             });
-            setList((prev) => {
+            setBodyList((prev) => {
                 let _list = _.cloneDeep(prev).sort((a, b) => a.id - b.id);
                 return _list;
             });
         } else {
             setFixedRowId(item.id);
-            setHeader((prev) => {
+            setHeaderList((prev) => {
                 let _list = _.cloneDeep(prev).sort((a, b) => a.id - b.id);
                 var _removedItem = _list.splice(getIndex(_list, item.id), 1)[0];
                 _list.splice(1, 0, _removedItem);
                 return _list;
             });
-            setList((prev) => {
+            setBodyList((prev) => {
                 let _list = _.cloneDeep(prev).sort((a, b) => a.id - b.id);
                 var _removedItem = _list.splice(getIndex(_list, item.id), 1)[0];
                 _list.splice(1, 0, _removedItem);
@@ -82,7 +82,7 @@ const Index = () => {
         <div className="for">
             <div className="table-container">
                 <div className="table-header">
-                    {header.map((item, index) => {
+                    {headerList.map((item, index) => {
                         return (
                             <p
                                 key={index}
@@ -100,9 +100,22 @@ const Index = () => {
                         );
                     })}
                 </div>
-                <div className="pt-10 pb-10 fs-14 table-title">基本信息</div>
+                <div className={'table-title'}>
+                    {headerList.map((item, index) => {
+                        return (
+                            <div
+                                key={index}
+                                className={cn('pl-12 pt-7 pb-7 fs-12 table-title-cell', {
+                                    'table-title-cellSticky': index === 0,
+                                })}
+                            >
+                                {index === 0 && <div>基本信息</div>}
+                            </div>
+                        );
+                    })}
+                </div>
                 <div className="table-body">
-                    {list.map((item, index) => {
+                    {bodyList.map((item, index) => {
                         return (
                             <div
                                 key={index}
