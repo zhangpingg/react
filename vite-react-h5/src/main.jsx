@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
+import { debounce } from 'lodash';
 // 数据存储
 import { Provider } from 'react-redux';
 import store from '@/store';
@@ -18,8 +19,32 @@ if (getEnvironment() !== 'prod') {
 
 setWxConfig();
 
+// 创建包含视口高度处理的高阶组件
+const ViewportHeightHandler = ({ children }) => {
+    useEffect(() => {
+        const setRealVh = () => {
+            const vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        };
+
+        const debouncedSetRealVh = debounce(setRealVh, 300);
+
+        setRealVh(); // 立即执行一次初始化
+        window.addEventListener('resize', debouncedSetRealVh); // 使用防抖后的函数
+
+        return () => {
+            window.removeEventListener('resize', debouncedSetRealVh);
+            debouncedSetRealVh.cancel(); // 清除防抖的 pending 执行
+        };
+    }, []);
+
+    return children;
+};
+
 createRoot(document.getElementById('root')).render(
     <Provider store={store}>
-        <AppRouter />
+        <ViewportHeightHandler>
+            <AppRouter />
+        </ViewportHeightHandler>
     </Provider>
 );

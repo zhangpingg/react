@@ -93,9 +93,12 @@ const Index = () => {
             <Button size="mini" color="primary" onClick={() => jumpPage('customTableFixedRowScroll')}>
                 自定义表格，固定列滚动
             </Button>
+            <br />
+            <Button size="mini" color="primary" onClick={() => jumpPage('vh')}>
+                vh高度，解决手机苹果浏览兼容问题
+            </Button>
         </div>
     );
 };
 
 export default Index;
-
