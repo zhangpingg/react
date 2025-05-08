@@ -31,6 +31,7 @@ const TwoTableScrollLinkage = lazy(() => import('../pages/twoTableScrollLinkage/
 const PhoneBook = lazy(() => import('../pages/phoneBook/index.jsx')); // 列表的分类显示和快速定位, 即电话簿
 const CustomTableFixedRowScroll = lazy(() => import('../pages/customTableFixedRowScroll/index.jsx')); // 自定义表格，固定列滚动
 const Vh = lazy(() => import('../pages/vh/index.jsx')); // vh高度，解决手机苹果浏览兼容问题
+const HighlightText = lazy(() => import('../pages/highlightText/index.jsx')); // 高亮文本
 
 const Index = () => {
     return (
@@ -62,6 +63,7 @@ const Index = () => {
                     <Route path="/twoTableScrollLinkage" element={<TwoTableScrollLinkage />} />
                     <Route path="/phoneBook" element={<PhoneBook />} />
                     <Route path="/customTableFixedRowScroll" element={<CustomTableFixedRowScroll />} />
+                    <Route path="/highlightText" element={<HighlightText />} />
                     <Route path="/vh" element={<Vh />} />
                     <Route path="*" element={<Err404 />} />
                 </Routes>

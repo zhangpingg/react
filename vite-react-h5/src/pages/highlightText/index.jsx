@@ -5,7 +5,6 @@
  */
 
 import React from 'react';
-import styles from './index.module.less';
 
 const Index = () => {
     let str = '1234abcd1234ABCD';
@@ -20,7 +19,7 @@ const Index = () => {
     };
 
     return (
-        <div className={styles['box']}>
+        <div>
             <span dangerouslySetInnerHTML={{ __html: highlightText(str, 'ab') }}></span>
         </div>
     );
