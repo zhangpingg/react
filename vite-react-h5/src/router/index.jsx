@@ -20,6 +20,7 @@ const RouteJumpParamDetails = lazy(() => import('../pages/routeJumpParam/details
 const WxAuthorizeAuthorize = lazy(() => import('../pages/wxAuthorize/authorize.jsx')); // 微信授权登录-授权页 (微信公众号)
 const WxAuthorizeHome = lazy(() => import('../pages/wxAuthorize/home.jsx')); // 微信授权登录-授权成功后首页 (微信公众号)
 const PreviewImg = lazy(() => import('../pages/previewImg/index.jsx')); // 预览图片
+const PreviewImgByAntdMobile = lazy(() => import('../pages/previewImgByAntdMobile/index.jsx')); // 预览图片（antd-mobile）
 const DomToImage = lazy(() => import('../pages/domToImage/index.jsx')); // DOM转换为图片
 const ScrollListH5 = lazy(() => import('../pages/scrollListH5/index.jsx')); // 无线滚动
 const StickyLayout = lazy(() => import('../pages/stickyLayout/index.jsx')); // 粘性布局
@@ -51,6 +52,7 @@ const Index = () => {
                     <Route path="/wxAuthorize-authorize" element={<WxAuthorizeAuthorize />} />
                     <Route path="/wxAuthorize-home" element={<WxAuthorizeHome />} />
                     <Route path="/previewImg" element={<PreviewImg />} />
+                    <Route path="/previewImgByAntdMobile" element={<PreviewImgByAntdMobile />} />
                     <Route path="/domToImage" element={<DomToImage />} />
                     <Route path="/scrollListH5" element={<ScrollListH5 />} />
                     <Route path="/stickyLayout" element={<StickyLayout />} />

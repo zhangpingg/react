@@ -4,8 +4,7 @@
  * @Description: 菜单名称-模块名称
  */
 
-import React, { useState } from 'react';
-import { Button, ImageViewer } from 'antd-mobile';
+import React from 'react';
 import ImgPreview from '@/components/imgPreview/index.jsx';
 import styles from './index.module.less';
 

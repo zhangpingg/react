@@ -58,6 +58,10 @@ const Index = () => {
                 预览图片
             </Button>
             <br />
+            <Button size="mini" color="primary" onClick={() => jumpPage('previewImgByAntdMobile')}>
+                预览图片（antd-mobile）
+            </Button>
+            <br />
             <Button size="mini" color="primary" onClick={() => jumpPage('domToImage')}>
                 DOM转换为图片
             </Button>

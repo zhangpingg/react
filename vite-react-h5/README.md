@@ -16,7 +16,8 @@ npm run build
 7) 微信公众号授权
 8) 弹框内的内容滚动（不要用antd中的Drawer, 使用antd-mobile中的Popup即可）
 9) 调用APP方法，测试下？
-10) 预览图片
+10.1) 预览图片
+10.2) 预览图片（antd-mobile）
 11) DOM转换为图片
 12) 无线滚动
 13) 粘性布局
