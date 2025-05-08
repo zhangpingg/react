@@ -116,3 +116,14 @@
     padding-bottom: constant(safe-area-inset-bottom);
     padding-bottom: env(safe-area-inset-bottom);
 }
+.safeArea( @i:1, @n:100,) when(@i<@n) {
+    .safe-area-@{i} {
+        padding-bottom: constant(safe-area-inset-bottom);
+        padding-bottom: env(safe-area-inset-bottom);
+        padding-bottom: calc(constant(safe-area-inset-bottom) + unit(@i, px));
+        padding-bottom: calc(env(safe-area-inset-bottom) + unit(@i, px));
+    }
+    .safeArea((@i+1), @n);
+}
+.safeArea();
+

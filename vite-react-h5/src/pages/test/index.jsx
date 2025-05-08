@@ -1,29 +1,37 @@
 /*
  * @Author: zhangping
  * @Date: 2025-04-28 14:49:02
- * @Description: 菜单名称-模块名称
+ * @Description: 带整理
  */
 
-import React from 'react';
+import React, { useEffect } from 'react';
+import cn from 'classnames';
+import { SafeArea } from 'antd-mobile';
 import styles from './index.module.less';
 
 const Index = () => {
-    let str = '1234abcd1234ABCD';
-
-    // 高亮文本
-    const highlightText = (str, keyword) => {
-        const regex = new RegExp(keyword, 'ig');
-        const highlightedText = str.replace(regex, (match) => {
-            return `<span style='color:#f00'>${match}</span>`;
-        });
-        return highlightedText;
-    };
-
     return (
-        <div className={styles['box']}>
-            <span dangerouslySetInnerHTML={{ __html: highlightText(str, 'ab') }}></span>
+        <div className={cn(styles['box'])}>
+            <div className={styles['box-header']}>顶部</div>
+            <div className={cn(styles['box-main'], 'safe-area')}>
+                {/* <div className={styles['box-main-content']}> */}
+                <p>内容1</p>
+                <p>内容2</p>
+                <p>内容3</p>
+                <p>内容4</p>
+                <p>内容5</p>
+                <p>内容6</p>
+                <p>内容7</p>
+                <p>内容8</p>
+                <p>内容9</p>
+                {/* </div> */}
+                {/* <div style={{ background: '#ffcfac' }}>
+                    <SafeArea position="bottom" />
+                </div> */}
+            </div>
         </div>
     );
 };
 
 export default Index;
+
