@@ -109,6 +109,10 @@ const Index = () => {
             <Button size="mini" color="primary" onClick={() => jumpPage('safeArea')}>
                 安全区域
             </Button>
+            <br />
+            <Button size="mini" color="primary" onClick={() => jumpPage('flex')}>
+                flex布局
+            </Button>
         </div>
     );
 };

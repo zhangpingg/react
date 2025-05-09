@@ -13,7 +13,11 @@ const Index = () => {
     return (
         <div className={cn(styles['box'])}>
             <div className={styles['box-header']}>
-                顶部：只有在手机上直接打开该页面才可以看到安全区域，通过路由跳转进该页面是不行的，因为底部有浏览器默认的一些东西
+                顶部：
+                <br />
+                (1)在手机上直接打开该页面才可以看到安全区域，通过路由跳转进该页面是不行的，因为底部有浏览器默认的一些东西
+                <br />
+                (2)嵌入APP的时候
             </div>
             {/*方式1*/}
             <div className={cn(styles['box-main'], 'safe-area-20')}>
