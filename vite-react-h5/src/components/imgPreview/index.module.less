@@ -1,17 +1,20 @@
 .preview-container {
-    position: relative;
-    display: inline-block;
-    &::after {
-        content: '';
-        position: absolute;
-        bottom: 4px;
-        right: 4px;
-        width: 16px;
-        height: 16px;
-        background-image: url('https://zc-oss.zcrubber.com/upload/files/2025/05/06/72580592818062536_previewIcon.1746519534664.png');
-        background-size: cover;
-        z-index: 1;
-        pointer-events: none;
+    display: flex;
+    flex-wrap: wrap;
+    .img-container {
+        display: inline-block;
+        position: relative;
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            right: 4px;
+            width: 16px;
+            height: 16px;
+            background-image: url('https://zc-oss.zcrubber.com/upload/files/2025/05/06/72580592818062536_previewIcon.1746519534664.png');
+            background-size: cover;
+            z-index: 1;
+            pointer-events: none;
+        }
     }
 }
-

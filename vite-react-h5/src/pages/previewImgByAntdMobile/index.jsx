@@ -25,7 +25,7 @@ const Index = () => {
             <br />
 
             {/*多个图片*/}
-            <ImgPreview urls={imgList}>
+            <ImgPreview urls={imgList} gap={{ row: 10, column: 10 }}>
                 {imgList.map((url) => {
                     return <img className={styles['box-img']} key={url} src={url} />;
                 })}

@@ -37,6 +37,21 @@
 }
 .setMarPadFontSize();
 
+// flex布局 gap行与列间距
+.setGap( @i:0, @n:20,) when(@i<@n) {
+    .gap-@{i} {
+        gap: unit(@i, px);
+    }
+    .row-gap-@{i} {
+        row-gap: unit(@i, px);
+    }
+    .column-gap-@{i} {
+        column-gap: unit(@i, px);
+    }
+    .setGap((@i+1), @n);
+}
+.setGap();
+
 // 溢出省略
 .e-1 {
     display: block;
