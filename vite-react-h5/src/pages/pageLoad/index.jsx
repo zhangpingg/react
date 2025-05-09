@@ -6,17 +6,21 @@
 
 import React, { useEffect, useState } from 'react';
 import { PullToRefresh, InfiniteScroll } from 'antd-mobile';
+import PageLoading from '@/components/pageLoading/index.jsx';
 import styles from './index.module.less';
 import cn from 'classnames';
 
 const Index = () => {
     const [data, setData] = useState([]);
-    const [current, setCurrent] = useState(1);
-    const [hasMore, setHasMore] = useState(true);
+    const [pageConfig, setPageConfig] = useState({
+        current: 1,
+        size: 10,
+        hasMore: true,
+    });
+    const [isLoading, setIsLoading] = useState(false);
 
     // 模拟接口
     const apiMock = (params) => {
-        console.log('参数:', params);
         return new Promise((resolve) => {
             setTimeout(() => {
                 let _list = [];
@@ -26,49 +30,70 @@ const Index = () => {
                 let res = {
                     list: _list,
                     pages: 3,
+                    current: params.current,
+                    size: params.size,
                 };
                 resolve(res);
             }, 2000);
         });
     };
-    // 下拉刷新
-    const pullToRefresh = async () => {
-        const res = await apiMock({ current: 1 });
-        setData(res.list);
-        setHasMore(1 < res.pages);
-        setCurrent(2);
-    };
-    // 加载更多
-    const loadMore = async () => {
-        const res = await apiMock({ current: current });
-        setData((prev) => [...prev, ...res.list]);
-        setHasMore(current < res.pages);
-        setCurrent((prev) => ++prev);
+    // 获取列表（下拉刷新&加载更多）
+    const getList = async (current) => {
+        try {
+            setIsLoading(true);
+            const res = await apiMock({ current: current, size: pageConfig.size });
+            console.log(11, res);
+            setData((prev) => {
+                if (current === 1) {
+                    return res.list;
+                } else {
+                    return [...prev, ...res.list];
+                }
+            });
+            setPageConfig((prev) => ({
+                ...prev,
+                current: res.current,
+                hasMore: res.current < res.pages,
+            }));
+            setIsLoading(false);
+        } catch (error) {
+            setIsLoading(false);
+        }
     };
 
     useEffect(() => {
-        pullToRefresh();
+        getList(1);
     }, []);
 
     return (
         <div className={cn({ 'fs-14': true, [styles['pl']]: true })}>
-            <PullToRefresh onRefresh={pullToRefresh}>
-                {data.length > 0 ? (
-                    <div className={styles['pl-list']}>
-                        <div>
-                            {data.map((item, index) => (
-                                <p key={index} className={styles['pl-list-item']}>
-                                    {item}
-                                </p>
-                            ))}
-                        </div>
-                        <InfiniteScroll loadMore={loadMore} hasMore={hasMore} threshold={100}>
-                            {/*自定义内容*/}
-                            {/*{hasMore ? <span>Loading</span> : <span>--- 我是有底线的 ---</span>}*/}
-                        </InfiniteScroll>
-                    </div>
+            <PullToRefresh onRefresh={() => getList(1)}>
+                {(data.length === 0) & isLoading ? (
+                    <PageLoading />
                 ) : (
-                    <div className={styles['pl-empty']}>暂无数据</div>
+                    <>
+                        {data.length > 0 ? (
+                            <div className={styles['pl-list']}>
+                                <div>
+                                    {data.map((item, index) => (
+                                        <p key={index} className={styles['pl-list-item']}>
+                                            {item}
+                                        </p>
+                                    ))}
+                                </div>
+                                <InfiniteScroll
+                                    loadMore={() => getList(pageConfig.current + 1)}
+                                    hasMore={pageConfig.hasMore}
+                                    threshold={100}
+                                >
+                                    {/*自定义内容*/}
+                                    {/*{pageConfig.hasMore ? <span>Loading</span> : <span>--- 我是有底线的 ---</span>}*/}
+                                </InfiniteScroll>
+                            </div>
+                        ) : (
+                            <div className={styles['pl-empty']}>暂无数据</div>
+                        )}
+                    </>
                 )}
             </PullToRefresh>
         </div>
