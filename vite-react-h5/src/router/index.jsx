@@ -32,6 +32,7 @@ const PhoneBook = lazy(() => import('../pages/phoneBook/index.jsx')); // 列表�
 const CustomTableFixedRowScroll = lazy(() => import('../pages/customTableFixedRowScroll/index.jsx')); // 自定义表格，固定列滚动
 const Vh = lazy(() => import('../pages/vh/index.jsx')); // vh高度，解决手机苹果浏览兼容问题
 const HighlightText = lazy(() => import('../pages/highlightText/index.jsx')); // 高亮文本
+const SafeArea = lazy(() => import('../pages/safeArea/index.jsx')); // 安全区域
 
 const Index = () => {
     return (
@@ -64,6 +65,7 @@ const Index = () => {
                     <Route path="/phoneBook" element={<PhoneBook />} />
                     <Route path="/customTableFixedRowScroll" element={<CustomTableFixedRowScroll />} />
                     <Route path="/highlightText" element={<HighlightText />} />
+                    <Route path="/safeArea" element={<SafeArea />} />
                     <Route path="/vh" element={<Vh />} />
                     <Route path="*" element={<Err404 />} />
                 </Routes>

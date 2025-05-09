@@ -105,6 +105,10 @@ const Index = () => {
             <Button size="mini" color="primary" onClick={() => jumpPage('highlightText')}>
                 高亮文本
             </Button>
+            <br />
+            <Button size="mini" color="primary" onClick={() => jumpPage('safeArea')}>
+                安全区域
+            </Button>
         </div>
     );
 };
