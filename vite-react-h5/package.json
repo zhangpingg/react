@@ -15,6 +15,7 @@
     "antd": "^5.23.4",
     "antd-mobile": "^5.38.1",
     "axios": "^1.7.9",
+    "better-scroll": "^2.5.1",
     "classnames": "^2.5.1",
     "html2canvas": "^1.4.1",
     "js-cookie": "^3.0.5",
