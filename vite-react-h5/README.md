@@ -14,8 +14,8 @@ npm run build
 5) px -> rem 计算
 6) console
 7) 微信公众号授权
-8) 弹框内的内容滚动（不要用antd中的Drawer, 使用antd-mobile中的Popup即可，lei说是会偶现内容滚动时底部滚动问题）
-8) 弹框内的内容滚动（better-scroll, lei说是比Popup好）
+8) 弹框内的内容滚动（不要用antd中的Drawer, 使用antd-mobile中的Popup即可，说是会偶现内容滚动时底部滚动问题）
+8) 弹框内的内容滚动（better-scroll, 说是比Popup好）
 9) 调用APP方法，测试下？
 10.1) 预览图片
 10.2) 预览图片（antd-mobile）
@@ -33,4 +33,3 @@ npm run build
 22) 安全区域
 23) flex布局
 ```
-
