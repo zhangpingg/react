@@ -1,5 +1,0 @@
-let list = [
-    'https://img2.baidu.com/it/u=3676341235,240287184&fm=253&fmt=auto&app=120&f=JPEG?w=500&h=578',
-    'https://miaobi-lite.bj.bcebos.com/miaobi/5mao/b%27LV8xNzM2NTM1NTY4LjUxOTkzNw%3D%3D%27/0.png',
-    'https://img2.baidu.com/it/u=706154024,2050458212&fm=253&app=138&f=JPEG?w=800&h=1732',
-];
