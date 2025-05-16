@@ -35,6 +35,7 @@ const Vh = lazy(() => import('../pages/vh/index.jsx')); // vh高度，解决手�
 const HighlightText = lazy(() => import('../pages/highlightText/index.jsx')); // 高亮文本
 const SafeArea = lazy(() => import('../pages/safeArea/index.jsx')); // 安全区域
 const Flex = lazy(() => import('../pages/flex/index.jsx')); // flex 布局
+const RemoveIOSspringBack = lazy(() => import('../pages/removeIOSspringBack/index.jsx')); // 去除IOS滚动时的回弹效果
 
 const Index = () => {
     return (
@@ -71,6 +72,7 @@ const Index = () => {
                     <Route path="/highlightText" element={<HighlightText />} />
                     <Route path="/safeArea" element={<SafeArea />} />
                     <Route path="/flex" element={<Flex />} />
+                    <Route path="/removeIOSspringBack" element={<RemoveIOSspringBack />} />
                     <Route path="*" element={<Err404 />} />
                 </Routes>
             </Suspense>

@@ -117,6 +117,10 @@ const Index = () => {
             <Button size="mini" color="primary" onClick={() => jumpPage('flex')}>
                 flex布局
             </Button>
+            <br />
+            <Button size="mini" color="primary" onClick={() => jumpPage('removeIOSspringBack')}>
+                去除IOS滚动时的回弹效果
+            </Button>
         </div>
     );
 };
