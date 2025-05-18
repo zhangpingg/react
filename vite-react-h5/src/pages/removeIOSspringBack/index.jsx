@@ -1,7 +1,7 @@
 /*
  * @Author: zhangping
  * @Date: 2025-02-17 15:11:26
- * @Description: 菜单名称-模块名称
+ * @Description: 去除IOS滚动时的回弹效果
  */
 
 import React, { useEffect, useRef } from 'react';
@@ -70,3 +70,4 @@ const Index = () => {
 };
 
 export default Index;
+

@@ -7,6 +7,7 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import { Button } from 'antd-mobile';
+import styles from './index.module.less';
 
 const Index = () => {
     const navigate = useNavigate();
@@ -17,7 +18,7 @@ const Index = () => {
     };
 
     return (
-        <div>
+        <div className={styles['h']}>
             <Button size="mini" color="primary" onClick={() => jumpPage('test')}>
                 test
             </Button>
@@ -126,3 +127,4 @@ const Index = () => {
 };
 
 export default Index;
+
