@@ -1,10 +1,30 @@
 .box {
-    height: 400px;
+    height: 300px;
     border: 2px solid #0f0;
     overflow: hidden;
     .box-main {
         width: 600px;
         height: 600px;
         border: 3px solid #f00;
+    }
+}
+
+.box2 {
+    height: 300px;
+    border: 2px solid #0f0;
+    overflow-y: auto;
+    overscroll-behavior: none;
+    .box2-main {
+        height: 600px;
+        border: 3px solid #f00;
+        div {
+            &:first-child {
+                position: sticky;
+                left: 0px;
+                top: 0;
+                z-index: 2;
+                border: 1px solid #000;
+            }
+        }
     }
 }

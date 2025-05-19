@@ -54,20 +54,36 @@ const Index = () => {
     }, []);
 
     return (
-        <div className={styles['box']} ref={cityListRef}>
-            <div className={styles['box-main']}>
-                <div>内容1内容1内容1内容1内容1</div>
-                <div>内容1内容1内容1内容1内容1</div>
-                <div>内容1内容1内容1内容1内容1</div>
-                <div>内容1内容1内容1内容1内容1</div>
-                <div>内容1内容1内容1内容1内容1</div>
-                <div>内容1内容1内容1内容1内容1</div>
-                <div>内容1内容1内容1内容1内容1</div>
-                <div>内容1内容1内容1内容1内容1</div>
+        <>
+            <p className="fs-14">苹果手机都生效</p>
+            <div className={styles['box']} ref={cityListRef}>
+                <div className={styles['box-main']}>
+                    <div>内容1内容1内容1内容1内容1</div>
+                    <div>内容1内容1内容1内容1内容1</div>
+                    <div>内容1内容1内容1内容1内容1</div>
+                    <div>内容1内容1内容1内容1内容1</div>
+                    <div>内容1内容1内容1内容1内容1</div>
+                    <div>内容1内容1内容1内容1内容1</div>
+                    <div>内容1内容1内容1内容1内容1</div>
+                    <div>内容1内容1内容1内容1内容1</div>
+                </div>
             </div>
-        </div>
+
+            <p className="fs-14 mt-20">12无效，14&15生效</p>
+            <div className={styles['box2']}>
+                <div className={styles['box2-main']}>
+                    <div>内容1</div>
+                    <div>内容1</div>
+                    <div>内容1</div>
+                    <div>内容1</div>
+                    <div>内容1</div>
+                    <div>内容1</div>
+                    <div>内容1</div>
+                    <div>内容1</div>
+                </div>
+            </div>
+        </>
     );
 };
 
 export default Index;
-
