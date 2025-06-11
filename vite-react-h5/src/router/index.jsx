@@ -36,6 +36,7 @@ const HighlightText = lazy(() => import('../pages/highlightText/index.jsx')); //
 const SafeArea = lazy(() => import('../pages/safeArea/index.jsx')); // 安全区域
 const Flex = lazy(() => import('../pages/flex/index.jsx')); // flex 布局
 const RemoveIOSspringBack = lazy(() => import('../pages/removeIOSspringBack/index.jsx')); // 去除IOS滚动时的回弹效果
+const SSE = lazy(() => import('../pages/sse/index.jsx')); // SSE 服务端单项推送
 
 const Index = () => {
     return (
@@ -73,6 +74,7 @@ const Index = () => {
                     <Route path="/safeArea" element={<SafeArea />} />
                     <Route path="/flex" element={<Flex />} />
                     <Route path="/removeIOSspringBack" element={<RemoveIOSspringBack />} />
+                    <Route path="/sse" element={<SSE />} />
                     <Route path="*" element={<Err404 />} />
                 </Routes>
             </Suspense>

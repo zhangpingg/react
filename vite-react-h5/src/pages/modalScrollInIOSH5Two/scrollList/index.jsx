@@ -29,6 +29,7 @@ const Index = forwardRef((props, ref) => {
             scrollInstancesRef.current[listName] = null;
         }
     };
+
     // 组件初始化
     useEffect(() => {
         if (cityListRef.current) {
