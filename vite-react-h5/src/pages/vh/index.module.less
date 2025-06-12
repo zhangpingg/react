@@ -4,7 +4,11 @@
         border: 1px solid #000;
     }
     .box-main {
+        // 方法1
         height: calc(var(--vh, 1vh) * 100 - 50px);
+        // 方法2：dvh：动态视窗高度（在一些旧版本的浏览器或某些特定设备上可能不兼容）
+        //height: calc(100vh - 50px); // 当dvh不兼容时，这个兜底
+        //height: calc(100dvh - 50px);
         border: 2px solid #f00;
     }
 }
