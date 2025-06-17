@@ -1,6 +1,6 @@
 import printJS from 'print-js';
 import html2Canvas from 'html2canvas';
-import JsPDF from 'jspdf';
+import JsPDF from 'jspdf'; // 用于在客户端浏览器中生成PDF文件和导出功能
 
 const htmlToPdf = ({
     id, // 需要转为pdf的html容器的id 必填
@@ -23,10 +23,12 @@ const htmlToPdf = ({
             canvasParams || {}
         )
             .then((canvas) => {
-                let PDF = new JsPDF('', 'pt', 'a4');
+                let PDF = new JsPDF('', 'pt', 'a4'); // 页面方向,空代表默认,默认是纵向、单位、页面大小
                 if (typeof pdfPageCallback === 'function') {
                     PDF = pdfPageCallback(canvas, JsPDF);
                 } else {
+                    console.log('canvas.width', canvas.width);
+                    console.log('canvas.height', canvas.height);
                     let contentWidth = canvas.width; // 内容的宽度
                     let contentHeight = canvas.height; // 内容高度
                     // 一页pdf显示html页面生成的canvas高度,a4纸的尺寸[595.28,841.89];
@@ -40,6 +42,7 @@ const htmlToPdf = ({
                     let pageData = canvas.toDataURL('image/jpeg', 1.0);
                     // 判断是否需要分页
                     if (leftHeight < pageHeight) {
+                        // 插入图片
                         PDF.addImage(pageData, 'JPEG', 0, 0, imgWidth, imgHeight);
                     } else {
                         while (leftHeight > 0) {
@@ -54,11 +57,13 @@ const htmlToPdf = ({
                 }
                 const blob = PDF.output('blob');
                 const fileURL = URL.createObjectURL(blob);
+                console.log(11, fileURL);
                 switch (type) {
                     case 'download':
                         PDF.save(`${title || new Date().getTime()}.pdf`);
                         break;
                     case 'print':
+                        // 打印: 只能在PC端，移动端无效
                         printJS(
                             {
                                 printable: fileURL,
@@ -67,6 +72,7 @@ const htmlToPdf = ({
                             },
                             printParams || {}
                         );
+                        console.log('print');
                         break;
                     case 'preview':
                         window.open(fileURL, '_bank');
