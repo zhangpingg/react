@@ -2,8 +2,8 @@ import React, { useState, useRef, useEffect } from 'react';
 
 const Index = () => {
     const eventSourceRef = useRef(null);
-    const [onlineUsers, setOnlineUsers] = useState(0);
-    const [connected, setConnected] = useState(false);
+    const [isConnected, setIsConnected] = useState(false);
+    const [data, setData] = useState('');
 
     // 创建SSE连接（缺点：不能新增或修改请求头）
     const connectSSE = () => {
@@ -13,20 +13,21 @@ const Index = () => {
         }
         // 建立新连接：使用时间戳参数避免缓存，创建新的 EventSource 实例
         try {
-            const eventSource = new EventSource(`/api/sse?t=${Date.now()}`);
+            // 本地服务器：server/server1.js
+            const eventSource = new EventSource(`http://localhost:9001/getData`);
             eventSourceRef.current = eventSource;
             // 监听打开事件：连接成功时设置状态为“已连接”
             eventSource.onopen = () => {
-                setConnected(true);
+                setIsConnected(true);
             };
             // 监听消息事件：接收并解析服务器发送的消息
             eventSource.onmessage = (event) => {
                 try {
-                    const data = JSON.parse(event.data);
-                    // 只处理在线用户数
-                    if (data.onlineUsers !== undefined) {
-                        setOnlineUsers(data.onlineUsers);
-                    }
+                    const res = JSON.parse(event.data);
+                    console.log('数据', res);
+                    setData((prev) => {
+                        return prev + res.data;
+                    });
                 } catch (error) {
                     console.error('解析数据失败:', error);
                 }
@@ -34,7 +35,7 @@ const Index = () => {
             // 监听错误事件：出错时关闭连接，并在5秒后尝试重新连接
             eventSource.onerror = (error) => {
                 console.error('SSE连接错误:', error);
-                setConnected(false);
+                setIsConnected(false);
                 eventSource.close();
                 // 5秒后尝试重新连接
                 setTimeout(connectSSE, 5000);
@@ -59,9 +60,8 @@ const Index = () => {
 
     return (
         <div>
-            <div>在线用户统计</div>
-            <div>状态：{connected ? '已连接' : '连接断开'}</div>
-            <div>在线用户：{onlineUsers}</div>
+            <div>状态：{isConnected ? '已连接' : '连接断开'}</div>
+            <div>从接口获取的数据：{data}</div>
         </div>
     );
 };

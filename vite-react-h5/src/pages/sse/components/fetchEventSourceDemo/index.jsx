@@ -8,6 +8,7 @@ import React, { useEffect, useState } from 'react';
 import { fetchEventSource } from '@microsoft/fetch-event-source';
 
 const Index = () => {
+    const [isConnected, setIsConnected] = useState(false);
     const [data, setData] = useState('');
     const fn1 = async () => {
         // 请查看 server/server1.js
@@ -15,6 +16,7 @@ const Index = () => {
             method: 'post',
             onopen: (res) => {
                 console.log('连接已连接');
+                setIsConnected(true);
             },
             onmessage: (event) => {
                 const res = JSON.parse(event.data);
@@ -25,6 +27,7 @@ const Index = () => {
             },
             onerror: (err) => {
                 console.error('SSE 错误:', err);
+                setIsConnected(false);
             },
             onclose: () => {
                 console.log('连接已关闭');
@@ -35,7 +38,12 @@ const Index = () => {
         fn1();
     }, []);
 
-    return <div>从接口获取的数据是：{data}</div>;
+    return (
+        <div>
+            <div>状态：{isConnected ? '已连接' : '连接断开'}</div>
+            <div className="mt-20">从接口获取的数据：{data}</div>
+        </div>
+    );
 };
 
 export default Index;
