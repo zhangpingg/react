@@ -126,6 +126,10 @@ const Index = () => {
             <Button size="mini" color="primary" onClick={() => jumpPage('sse')}>
                 SSE 服务端单项推送
             </Button>
+            <br />
+            <Button size="mini" color="primary" onClick={() => jumpPage('urlCreateQRCode')}>
+                url生成二维码
+            </Button>
         </div>
     );
 };

@@ -34,4 +34,5 @@ npm run build
 23) flex布局
 24) 去除IOS中div滚动时的回弹效果
 25) SSE 服务端单项推送
+26) url生成二维码
 ```
