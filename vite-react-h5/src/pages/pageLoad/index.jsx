@@ -66,7 +66,7 @@ const Index = () => {
     }, []);
 
     return (
-        <div className={cn({ 'fs-14': true, [styles['pl']]: true })}>
+        <div className={cn(styles['pl'], 'fs-14')}>
             <PullToRefresh onRefresh={() => getList(1)}>
                 {(data.length === 0) & isLoading ? (
                     <PageLoading />

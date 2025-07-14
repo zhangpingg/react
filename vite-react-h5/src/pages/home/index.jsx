@@ -104,7 +104,7 @@ const Index = () => {
             </Button>
             <br />
             <Button size="mini" color="primary" onClick={() => jumpPage('vh')}>
-                vh高度，解决手机苹果浏览兼容问题
+                vh 高度，解决手机苹果浏览兼容问题
             </Button>
             <br />
             <Button size="mini" color="primary" onClick={() => jumpPage('highlightText')}>
