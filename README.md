@@ -1,7 +1,7 @@
 # react 移动端框架
 
 ```
-【umi-react-h5】
+【react18：umi-react-h5】
 1) antd-mobile
 2) react-redux @reduxjs/toolkit
 3) dva 持久化存储在 localStorage
@@ -9,7 +9,7 @@
 ```
 
 ```
-【vite-react-h5】
+【react18：vite-react-h5】
 1) antd-mobile
 2) antd
 3) react-redux @reduxjs/toolkit
@@ -38,4 +38,9 @@
 24) 去除IOS中div滚动时的回弹效果
 25) SSE 服务端单项推送
 26) url生成二维码
+```
+
+```
+【react19：vite】
+1)
 ```

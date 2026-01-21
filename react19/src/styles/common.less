@@ -1,0 +1,145 @@
+// margin, padding, font-size, height, line-height
+.setMarPadFontSize( @i:0, @n:100,) when(@i<@n) {
+    .pt-@{i} {
+        padding-top: unit(@i, px);
+    }
+    .pr-@{i} {
+        padding-right: unit(@i, px);
+    }
+    .pb-@{i} {
+        padding-bottom: unit(@i, px);
+    }
+    .pl-@{i} {
+        padding-left: unit(@i, px);
+    }
+    .mt-@{i} {
+        margin-top: unit(@i, px);
+    }
+    .mr-@{i} {
+        margin-right: unit(@i, px);
+    }
+    .mb-@{i} {
+        margin-bottom: unit(@i, px);
+    }
+    .ml-@{i} {
+        margin-left: unit(@i, px);
+    }
+    .fs-@{i} {
+        font-size: unit(@i, px);
+    }
+    .h-@{i} {
+        height: unit(@i, px);
+    }
+    .lh-@{i} {
+        line-height: unit(@i, px);
+    }
+    .setMarPadFontSize((@i+1), @n);
+}
+.setMarPadFontSize();
+
+// flex布局 gap行与列间距
+.setGap( @i:0, @n:20,) when(@i<@n) {
+    .gap-@{i} {
+        gap: unit(@i, px);
+    }
+    .row-gap-@{i} {
+        row-gap: unit(@i, px);
+    }
+    .column-gap-@{i} {
+        column-gap: unit(@i, px);
+    }
+    .setGap((@i+1), @n);
+}
+.setGap();
+
+// 溢出省略
+.e-1 {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.setEllipsis( @i:2, @n:5,) when(@i<@n) {
+    .e-@{i} {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: @i;
+        -webkit-box-orient: vertical;
+    }
+    .setEllipsis((@i+1), @n);
+}
+.setEllipsis();
+
+// 定位布局样式
+.por {
+    position: relative;
+}
+.poa {
+    position: absolute;
+}
+.cup {
+    cursor: pointer;
+}
+.dib {
+    display: inline-block;
+}
+.tar {
+    text-align: right;
+}
+.tac {
+    text-align: center;
+}
+.df {
+    display: flex;
+}
+.flex1 {
+    flex: 1;
+}
+.w100 {
+    width: 100%;
+}
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+.fw-b {
+    font-weight: bold;
+}
+// flex水平垂直居中对齐
+.flex-c {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+// flex垂直居中对齐
+.flex-vc {
+    display: flex;
+    align-items: center;
+}
+// 定位水平垂直居中对齐
+.pos-c {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+// 底部安全距离
+.safe-area {
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
+}
+.safeArea( @i:1, @n:100,) when(@i<@n) {
+    .safe-area-@{i} {
+        padding-bottom: calc(constant(safe-area-inset-bottom) + unit(@i, px));
+        padding-bottom: calc(env(safe-area-inset-bottom) + unit(@i, px));
+    }
+    .safeArea((@i+1), @n);
+}
+.safeArea();
+// 隐藏滚动条
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
