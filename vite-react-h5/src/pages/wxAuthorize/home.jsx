@@ -8,7 +8,7 @@ import React, { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import { wx } from '@/libs/wx.js';
 import { wxAuthLoginByBase } from '@/libs/wx.js';
-import { getUrlQuery } from '@/libs/util';
+import { getUrlQuery } from '@/libs/util.tool';
 
 const Index = () => {
     const { state } = useLocation();
