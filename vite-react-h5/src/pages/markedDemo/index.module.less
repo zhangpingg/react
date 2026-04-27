@@ -10,17 +10,32 @@
     border: 1px solid #000;
     .markdownBody {
         line-height: 1.6;
+        :global(.tableFatherBox) {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            &::-webkit-scrollbar {
+                height: 6px;
+            }
+            &::-webkit-scrollbar-thumb {
+                background: #ccc;
+                border-radius: 3px;
+            }
+        }
         table {
             border-collapse: collapse;
             width: 100%;
             margin: 10px 0;
             background: #fff;
+            border: 1px solid #e0e0e0;
+            table-layout: fixed;
+            font-size: 12px;
         }
         th,
         td {
             border: 1px solid #ddd;
             padding: 5px 8px;
             text-align: left;
+            width: 80px;
         }
         th {
             background-color: #fafafa;
