@@ -38,6 +38,7 @@ const Flex = lazy(() => import('../pages/flex/index.jsx')); // flex 布局
 const RemoveIOSspringBack = lazy(() => import('../pages/removeIOSspringBack/index.jsx')); // 去除IOS滚动时的回弹效果
 const SSE = lazy(() => import('../pages/sse/index.jsx')); // SSE 服务端单项推送
 const UrlCreateQRCode = lazy(() => import('../pages/urlCreateQRCode/index.jsx')); // url生产二维码
+const MarkedDemo = lazy(() => import('../pages/markedDemo/index.jsx')); // marked渲染
 
 const Index = () => {
     return (
@@ -77,6 +78,7 @@ const Index = () => {
                     <Route path="/removeIOSspringBack" element={<RemoveIOSspringBack />} />
                     <Route path="/sse" element={<SSE />} />
                     <Route path="/urlCreateQRCode" element={<UrlCreateQRCode />} />
+                    <Route path="/markedDemo" element={<MarkedDemo />} />
                     <Route path="*" element={<Err404 />} />
                 </Routes>
             </Suspense>

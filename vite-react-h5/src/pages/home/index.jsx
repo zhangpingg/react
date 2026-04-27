@@ -130,6 +130,10 @@ const Index = () => {
             <Button size="mini" color="primary" onClick={() => jumpPage('urlCreateQRCode')}>
                 url生成二维码
             </Button>
+            <br />
+            <Button size="mini" color="primary" onClick={() => jumpPage('markedDemo')}>
+                marked渲染页面（表格）
+            </Button>
         </div>
     );
 };

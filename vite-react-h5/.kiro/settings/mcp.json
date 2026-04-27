@@ -1,0 +1,20 @@
+{
+    "mcpServers": {
+        "pencil": {
+            "command": "uvx",
+            "args": ["pencil-mcp@latest"],
+            "env": {
+                "FASTMCP_LOG_LEVEL": "ERROR"
+            },
+            "disabled": false,
+            "autoApprove": [
+                "pencil_create_shape",
+                "pencil_create_text",
+                "pencil_create_line",
+                "pencil_create_arrow",
+                "pencil_get_canvas_info",
+                "pencil_clear_canvas"
+            ]
+        }
+    }
+}
