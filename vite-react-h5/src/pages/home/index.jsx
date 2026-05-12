@@ -134,6 +134,14 @@ const Index = () => {
             <Button size="mini" color="primary" onClick={() => jumpPage('markedDemo')}>
                 marked渲染页面（表格）
             </Button>
+            <br />
+            <Button size="mini" color="primary" onClick={() => jumpPage('figmaDemo')}>
+                figmaDemo
+            </Button>
+            <br />
+            <Button size="mini" color="primary" onClick={() => jumpPage('selectPlateNumber')}>
+                车牌号输入
+            </Button>
         </div>
     );
 };

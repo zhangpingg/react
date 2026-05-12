@@ -1,0 +1,191 @@
+/*
+ * @Author: zhangping
+ * @Date: 2025-05-11
+ * @Description: figmaDemo - Feed Page
+ */
+
+@import '../../styles/common.less';
+
+.feed-page {
+    width: 375px;
+    background-color: #ffffff;
+    min-height: 100vh;
+    padding: 0 16px;
+    .feed-category-section {
+        .feed-category-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 0;
+            .feed-category-title {
+                font-family: Inter;
+                font-size: 16px;
+                font-weight: 600;
+                line-height: 140%;
+                letter-spacing: -2%;
+                color: #000000;
+            }
+            .feed-category-chevron {
+                width: 20px;
+                height: 20px;
+                svg {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+        .feed-category-carousel {
+            display: flex;
+            gap: 24px;
+            padding: 8px 0;
+            overflow-x: auto;
+            scrollbar-width: none;
+            &::-webkit-scrollbar {
+                display: none;
+            }
+            .feed-category-item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+                flex-shrink: 0;
+                .feed-category-item-image {
+                    width: 76px;
+                    height: 76px;
+                    border-radius: 50%;
+                    background-color: #f7f7f7;
+                    overflow: hidden;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+                .feed-category-item-title {
+                    font-family: Inter;
+                    font-size: 14px;
+                    font-weight: 500;
+                    line-height: 140%;
+                    letter-spacing: 0.97%;
+                    color: #161823;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    .feed-post {
+        display: flex;
+        gap: 12px;
+        padding: 16px 0;
+        border-bottom: 0.5px solid #e6e6e6;
+        .feed-post-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: #f7f7f7;
+            overflow: hidden;
+            flex-shrink: 0;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        .feed-post-content {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            flex: 1;
+            .feed-post-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                .feed-post-meta {
+                    display: flex;
+                    flex-direction: column;
+                    .feed-post-name-group {
+                        display: flex;
+                        align-items: center;
+                        gap: 4px;
+                        .feed-post-name {
+                            font-family: Inter;
+                            font-size: 14px;
+                            font-weight: 600;
+                            line-height: 150%;
+                            color: #000000;
+                        }
+                        .feed-post-group {
+                            font-family: Inter;
+                            font-size: 14px;
+                            font-weight: 400;
+                            line-height: 150%;
+                            color: #000000;
+                        }
+                    }
+                    .feed-post-time {
+                        font-family: Inter;
+                        font-size: 12px;
+                        font-weight: 400;
+                        line-height: 150%;
+                        color: #828282;
+                    }
+                }
+                .feed-post-more {
+                    width: 24px;
+                    height: 24px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    svg {
+                        width: 15px;
+                        height: 3px;
+                    }
+                }
+            }
+            .feed-post-image {
+                width: 100%;
+                height: 299px;
+                border-radius: 4px;
+                background-color: #f7f7f7;
+                overflow: hidden;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+            .feed-post-desc-actions {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                .feed-post-description {
+                    font-family: Inter;
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 140%;
+                    color: #000000;
+                }
+                .feed-post-actions {
+                    display: flex;
+                    gap: 16px;
+                    .feed-post-action {
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+                        svg {
+                            width: 20px;
+                            height: 20px;
+                        }
+                        .feed-post-action-text {
+                            font-family: Inter;
+                            font-size: 14px;
+                            font-weight: 500;
+                            line-height: 140%;
+                            color: #000000;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

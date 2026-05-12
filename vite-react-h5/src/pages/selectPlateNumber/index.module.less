@@ -1,0 +1,295 @@
+/*
+ * @Author: zhangping
+ * @Date: 2025-06-18
+ * @Description: License Plate Input
+ */
+
+@import '../../styles/common.less';
+
+.plate-input-page {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+    .plate-input-navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 16px;
+        background-color: #fff;
+        border-bottom: 1px solid #e8e8e8;
+        .plate-input-navbar-back {
+            font-size: 14px;
+            color: #666;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 4px 8px;
+        }
+        .plate-input-navbar-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+        }
+        .plate-input-navbar-confirm {
+            font-size: 14px;
+            color: #1890ff;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 4px 8px;
+            font-weight: 500;
+        }
+    }
+    .plate-input-header {
+        padding: 24px 16px;
+        text-align: center;
+        font-size: 14px;
+        color: #666;
+    }
+    .plate-input-display {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        padding: 32px 16px;
+        .plate-input-item {
+            width: 40px;
+            height: 52px;
+            border: 2px solid #d0d0d0;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'DIN Alternate', 'Arial Black', sans-serif;
+            font-size: 26px;
+            font-weight: 700;
+            color: #333;
+            background-color: #fff;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        .plate-input-item-active {
+            border-color: #1890ff;
+            box-shadow:
+                0 0 0 3px rgba(24, 144, 255, 0.15),
+                0 2px 8px rgba(24, 144, 255, 0.2);
+        }
+        .plate-input-item-special {
+            background: linear-gradient(135deg, #ff6b00 0%, #ff8c00 100%);
+            color: #fff;
+            border-color: #ff6b00;
+            box-shadow: 0 4px 12px rgba(255, 107, 0, 0.3);
+        }
+    }
+    .plate-input-keyboard {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #e8e8e8;
+        padding: 8px;
+        padding-bottom: calc(8px + env(safe-area-inset-bottom));
+        display: flex;
+        flex-direction: column;
+        .plate-input-keyboard-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            .plate-input-keyboard-key {
+                width: calc((100% - 45px) / 10);
+                height: 42px;
+                border: 1px solid #d0d0d0;
+                border-radius: 6px;
+                background: #ffffff;
+                font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+                font-size: 17px;
+                font-weight: 500;
+                color: #333;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                transition: all 0.15s ease;
+                box-sizing: border-box;
+            }
+            .plate-input-keyboard-key:active {
+                background: #ececec;
+                transform: scale(0.98);
+            }
+            .plate-input-keyboard-key-disabled {
+                background: #f5f5f5;
+                color: #999;
+                cursor: not-allowed;
+            }
+            .plate-input-keyboard-key-empty {
+                width: calc((100% - 45px) / 10);
+                height: 42px;
+                background: transparent;
+                border: none;
+            }
+            .plate-input-keyboard-key-switch {
+                width: calc((100% - 45px) / 10);
+                height: 42px;
+                border: 1px solid #c0c0c0;
+                border-radius: 6px;
+                background: #d8d8d8;
+                color: #555;
+                font-size: 15px;
+                font-weight: 500;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                box-sizing: border-box;
+            }
+            .plate-input-keyboard-key-delete {
+                width: calc((100% - 45px) / 10);
+                height: 42px;
+                border: 1px solid #c0c0c0;
+                border-radius: 6px;
+                background: #d8d8d8;
+                color: #555;
+                font-size: 15px;
+                font-weight: 500;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                box-sizing: border-box;
+            }
+        }
+        .plate-input-keyboard-row-special {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            .plate-input-keyboard-key-narrow {
+                width: calc((100% - 90px) / 9);
+                height: 42px;
+                border: 1px solid #d0d0d0;
+                border-radius: 6px;
+                background: #ffffff;
+                font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+                font-size: 17px;
+                font-weight: 500;
+                color: #333;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                transition: all 0.15s ease;
+                box-sizing: border-box;
+            }
+            .plate-input-keyboard-key-narrow:active {
+                background: #ececec;
+                transform: scale(0.98);
+            }
+            .plate-input-keyboard-key-narrow-disabled {
+                background: #f5f5f5;
+                color: #999;
+                cursor: not-allowed;
+            }
+            .plate-input-keyboard-key-switch-wide {
+                width: calc((100% - 45px) / 10 + 15px);
+                height: 42px;
+                border: 1px solid #c0c0c0;
+                border-radius: 6px;
+                background: #d8d8d8;
+                color: #555;
+                font-size: 15px;
+                font-weight: 500;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                box-sizing: border-box;
+            }
+            .plate-input-keyboard-key-delete-wide {
+                width: calc((100% - 45px) / 10 + 15px);
+                height: 42px;
+                border: 1px solid #c0c0c0;
+                border-radius: 6px;
+                background: #d8d8d8;
+                color: #555;
+                font-size: 15px;
+                font-weight: 500;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                box-sizing: border-box;
+            }
+        }
+        .plate-input-keyboard-row-qwerty {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            padding: 0 4.5px;
+            .plate-input-keyboard-key-qwerty {
+                flex: 1;
+                height: 42px;
+                border: 1px solid #d0d0d0;
+                border-radius: 6px;
+                background: #ffffff;
+                font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+                font-size: 17px;
+                font-weight: 500;
+                color: #333;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                transition: all 0.15s ease;
+                box-sizing: border-box;
+                margin-right: 4.5px;
+            }
+            .plate-input-keyboard-key-qwerty:last-child {
+                margin-right: 0;
+            }
+            .plate-input-keyboard-key-qwerty:active {
+                background: #ececec;
+                transform: scale(0.98);
+            }
+            .plate-input-keyboard-key-qwerty-disabled {
+                background: #f5f5f5;
+                color: #999;
+                cursor: not-allowed;
+            }
+        }
+        .plate-input-keyboard-row-asdf {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            padding: 0 4.5px;
+            .plate-input-keyboard-key-asdf {
+                flex: 1;
+                height: 42px;
+                border: 1px solid #d0d0d0;
+                border-radius: 6px;
+                background: #ffffff;
+                font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+                font-size: 17px;
+                font-weight: 500;
+                color: #333;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                transition: all 0.15s ease;
+                box-sizing: border-box;
+                margin-right: 4.5px;
+            }
+            .plate-input-keyboard-key-asdf:last-child {
+                margin-right: 0;
+            }
+            .plate-input-keyboard-key-asdf:active {
+                background: #ececec;
+                transform: scale(0.98);
+            }
+            .plate-input-keyboard-key-asdf-disabled {
+                background: #f5f5f5;
+                color: #999;
+                cursor: not-allowed;
+            }
+        }
+    }
+}
+

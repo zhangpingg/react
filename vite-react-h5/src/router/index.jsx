@@ -39,6 +39,8 @@ const RemoveIOSspringBack = lazy(() => import('../pages/removeIOSspringBack/inde
 const SSE = lazy(() => import('../pages/sse/index.jsx')); // SSE 服务端单项推送
 const UrlCreateQRCode = lazy(() => import('../pages/urlCreateQRCode/index.jsx')); // url生产二维码
 const MarkedDemo = lazy(() => import('../pages/markedDemo/index.jsx')); // marked渲染
+const FigmaDemo = lazy(() => import('../pages/figmaDemo/index.jsx')); // figmaDemo
+const SelectPlateNumber = lazy(() => import('../pages/selectPlateNumber/index.jsx')); // 车牌号输入
 
 const Index = () => {
     return (
@@ -79,6 +81,8 @@ const Index = () => {
                     <Route path="/sse" element={<SSE />} />
                     <Route path="/urlCreateQRCode" element={<UrlCreateQRCode />} />
                     <Route path="/markedDemo" element={<MarkedDemo />} />
+                    <Route path="/figmaDemo" element={<FigmaDemo />} />
+                    <Route path="/selectPlateNumber" element={<SelectPlateNumber />} />
                     <Route path="*" element={<Err404 />} />
                 </Routes>
             </Suspense>
