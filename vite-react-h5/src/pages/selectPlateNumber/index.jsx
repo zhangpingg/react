@@ -139,17 +139,35 @@ const Index = () => {
     };
 
     /**
+     * 检查是否为特殊车牌前缀（如 WJ、军、警等）
+     * @returns {boolean} - 是否为特殊车牌
+     */
+    const isSpecialPlate = () => {
+        const prefix = plate[0] + plate[1];
+        // 特殊车牌前缀列表：WJ(武警)、军、警、消、边、空、海等
+        const specialPrefixes = ['WJ', '军', '警', '消', '边', '空', '海', '北', '沈', '兰', '济', '南', '广', '成'];
+        return specialPrefixes.includes(prefix) || specialPrefixes.includes(plate[0]);
+    };
+
+    /**
      * 验证字符在当前键盘模式下是否有效
      * @param {string} char - 要验证的字符
      * @returns {boolean} - 字符是否可用
      */
     const isValidChar = (char) => {
+        // 如果是特殊车牌（如武警 WJ），后续位置允许输入数字
+        const allowNumbers = isSpecialPlate() && activeIndex >= 2;
+
         switch (keyboardMode) {
             // 省份模式下，只能输入省份简称
             case 'province':
                 return PROVINCES.includes(char);
             // 字母模式下，可以输入字母或省份简称（用于特殊车牌）
+            // 如果是特殊车牌，还允许输入数字
             case 'letter':
+                if (allowNumbers) {
+                    return LETTERS.includes(char) || PROVINCES.includes(char) || NUMBERS.includes(char);
+                }
                 return LETTERS.includes(char) || PROVINCES.includes(char);
             // 混合模式下，可以输入字母或数字
             case 'mix':
@@ -352,7 +370,7 @@ const Index = () => {
                         key={index}
                         className={`${styles['plate-input-item']} ${
                             activeIndex === index ? styles['plate-input-item-active'] : ''
-                        } ${index === 7 && char ? styles['plate-input-item-special'] : ''}`}
+                        }`}
                         onClick={() => handlePlateClick(index)}
                     >
                         {char}
